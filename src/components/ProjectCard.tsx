@@ -1,3 +1,4 @@
+import { asset } from '../lib/asset'
 import { motion } from 'framer-motion'
 import { ArrowUpRightIcon, LockSimpleIcon, QuotesIcon, SealCheckIcon } from '@phosphor-icons/react'
 import { useState } from 'react'
@@ -61,7 +62,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
           </div>
           <div className="relative aspect-[16/10] overflow-hidden bg-page [container-type:size]">
             <img
-              src={image}
+              src={asset(image)}
               alt={`${title} website homepage`}
               loading="lazy"
               decoding="async"

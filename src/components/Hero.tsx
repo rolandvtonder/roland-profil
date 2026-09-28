@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion'
 import { ArrowRightIcon, LockSimpleIcon } from '@phosphor-icons/react'
 import { hero, projects } from '../content'
+import { asset } from '../lib/asset'
 
 // The three sites that float beside the headline, front card last
 const showcase = [
@@ -39,7 +40,7 @@ function ShowcaseCard({ image, title, rotate, delay, className }: { image: strin
             {title}
           </span>
         </div>
-        <img src={image} alt={`${title} website`} loading="lazy" decoding="async" className="h-[150px] w-full object-cover object-top lg:h-[180px]" />
+        <img src={asset(image)} alt={`${title} website`} loading="lazy" decoding="async" className="h-[150px] w-full object-cover object-top lg:h-[180px]" />
       </motion.div>
     </motion.div>
   )

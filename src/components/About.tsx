@@ -3,13 +3,14 @@ import LogoMark from './LogoMark'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { about, site } from '../content'
+import { asset } from '../lib/asset'
 import { easeOutSoft, revealViewport } from '../lib/motion'
 
 function Portrait() {
   return (
     <div className="relative aspect-[4/5] overflow-hidden rounded-[28px] border border-line bg-surface">
       {about.photo ? (
-        <img src={about.photo} alt={about.photoAlt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
+        <img src={asset(about.photo)} alt={about.photoAlt} loading="lazy" decoding="async" className="h-full w-full object-cover" />
       ) : (
         // Branded stand-in until a photo is added in content.ts
         <div aria-hidden="true" className="absolute inset-0">
