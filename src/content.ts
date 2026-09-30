@@ -84,6 +84,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'LIFTR Co',
+    category: 'Crane hire · Nationwide',
+    status: 'client',
+    description:
+      'A full website for a nationwide crane hire and lifting company: mobile and spider crane hire, glass and steel installations, access equipment, a gallery of completed lifts and a plant-for-sale listing — with WhatsApp quoting on every page.',
+    highlights: ['Service pages', 'Lift gallery', 'Equipment for sale', 'WhatsApp quotes'],
+    url: 'https://liftrco.co.za/',
+    image: '/work/liftr.webp',
+    featured: true,
+  },
+  {
     title: 'Flexi Tours',
     category: 'Tour operator · Cape Town',
     status: 'client',
@@ -229,7 +240,7 @@ export const about = {
   subtitle: 'I help local businesses win more work online.',
   // Draft story: add a personal touch (how you started, what you enjoy) whenever you like.
   paragraphs: [
-    'I’m a web designer and developer based in Brackenhurst, Alberton. I build fast, modern websites for local businesses, from plumbers and electricians to travel agencies and event companies, designed to turn visitors into calls, WhatsApps and bookings.',
+    'I’m a web designer and developer based in Brackenhurst, Alberton. I build fast, modern websites for local businesses, from plumbers and electricians to travel agencies, event companies and crane hire, designed to turn visitors into calls, WhatsApps and bookings.',
     'Every project starts the same way: I design a free preview of your homepage, so you can see exactly what you’re getting before you spend a cent. If you love it, I build the rest, take it live and stay just a WhatsApp away for changes.',
   ],
   // PLACEHOLDER: put your photo in /public (e.g. /public/roland.jpg) and set photo: '/roland.jpg'

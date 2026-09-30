@@ -6,7 +6,7 @@ import { asset } from '../lib/asset'
 // The three sites that float beside the headline, front card last
 const showcase = [
   // The two back cards are hidden on phones, where the cluster has no room
-  { project: projects.find((p) => p.title === 'Sure Penzance Travel')!, className: 'hidden sm:block left-0 top-2 w-[230px] lg:w-[290px]', rotate: -7, delay: 0.6 },
+  { project: projects.find((p) => p.title === 'LIFTR Co')!, className: 'hidden sm:block left-0 top-2 w-[230px] lg:w-[290px]', rotate: -7, delay: 0.6 },
   { project: projects.find((p) => p.title === 'Drip Dry Plumbing')!, className: 'hidden sm:block right-0 top-16 w-[230px] lg:w-[290px]', rotate: 6, delay: 0.3 },
   {
     project: projects.find((p) => p.title === 'Flexi Tours')!,
