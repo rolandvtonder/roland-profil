@@ -101,7 +101,7 @@ export const projects: Project[] = [
     description:
       'A complete redesign for a Cape Town tour company: day tours, safaris, multi-day packages, airport transfers and travel guides, with a WhatsApp enquiry always one tap away.',
     highlights: ['Tour catalogue', 'Transfer pricing', 'Travel guides', 'WhatsApp booking'],
-    url: 'https://rolandvtonder.github.io/FlexiTours-demo-web/',
+    url: 'https://flexi-tours.co.za/',
     image: '/work/flexitours.webp',
     featured: true,
   },
