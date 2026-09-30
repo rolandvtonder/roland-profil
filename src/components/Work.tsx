@@ -8,7 +8,7 @@ export default function Work() {
   return (
     <section id="work" aria-labelledby="work-title" className="relative px-gutter pt-24 pb-28 md:pt-32 md:pb-36">
       <SectionHeading id="work-title" index="01" label="Selected Work" title="Recent work." subtitle="Sites that look sharp and work hard.">
-        Client work and concept redesigns for local businesses, every one designed and built by me. Hover over a preview to scroll through the page, or click to explore the site.
+        Client work and concept redesigns for businesses around South Africa, every one designed and built by me. Hover over a preview to scroll through the page, or click to explore the site.
       </SectionHeading>
 
       <ul className="mt-16 grid grid-cols-1 gap-x-8 gap-y-16 md:grid-cols-2 lg:mt-20">

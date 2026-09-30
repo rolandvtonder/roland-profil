@@ -17,7 +17,7 @@ export default function Footer() {
             <span className="font-display text-2xl font-extrabold tracking-[-0.02em] text-white">{site.name}</span>
           </a>
           <p className="mt-5 max-w-sm text-[15px] leading-relaxed text-ink-muted">
-            Websites that bring Alberton businesses more calls and WhatsApps. Start with a free homepage preview.
+            Websites that bring South African businesses more calls and WhatsApps. Start with a free homepage preview.
           </p>
           <PillLink href={previewCta.href} className="mt-8">
             {previewCta.label}

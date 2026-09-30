@@ -27,7 +27,7 @@ export const site = {
     number: '27640703335', // international format (27 + number without the leading 0) for wa.me links
     message: 'Hi Roland, I’d like to chat about a website.', // pre-filled when a visitor opens the chat
   },
-  location: 'Brackenhurst, Alberton',
+  location: 'Alberton, Johannesburg',
   availability: 'Available for projects',
   responseTime: 'I reply within one business day',
   // Paste a free Web3Forms access key (https://web3forms.com) to receive form
@@ -62,7 +62,7 @@ export const hero = {
   titleAccent: 'More Calls & WhatsApps',
   primaryCta: { label: 'Get a free homepage preview', href: '#contact' },
   blurb:
-    'I design and build fast, modern websites for local businesses, and I’ll design your homepage first so you can see your new site before you spend a cent.',
+    'I design and build fast, modern websites for businesses across South Africa, and I’ll design your homepage first so you can see your new site before you spend a cent.',
 }
 
 // ── Work ─────────────────────────────────────────────────────────────────
@@ -237,15 +237,15 @@ export const services: { icon: Icon; title: string; description: string; tags: s
 // ── About ────────────────────────────────────────────────────────────────
 export const about = {
   title: 'Hi, I’m Roland.',
-  subtitle: 'I help local businesses win more work online.',
+  subtitle: 'I help South African businesses win more work online.',
   // Draft story: add a personal touch (how you started, what you enjoy) whenever you like.
   paragraphs: [
-    'I’m a web designer and developer based in Brackenhurst, Alberton. I build fast, modern websites for local businesses, from plumbers and electricians to travel agencies, event companies and crane hire, designed to turn visitors into calls, WhatsApps and bookings.',
+    'I’m a web designer and developer based in Alberton, Johannesburg, and I work with businesses right across South Africa. I build fast, modern websites for everyone from plumbers and electricians to travel agencies, event companies and crane hire firms, designed to turn visitors into calls, WhatsApps and bookings.',
     'Every project starts the same way: I design a free preview of your homepage, so you can see exactly what you’re getting before you spend a cent. If you love it, I build the rest, take it live and stay just a WhatsApp away for changes.',
   ],
   // PLACEHOLDER: put your photo in /public (e.g. /public/roland.jpg) and set photo: '/roland.jpg'
   photo: '',
-  photoAlt: 'Roland, web designer in Alberton',
+  photoAlt: 'Roland, web designer in Johannesburg, South Africa',
   values: [
     { icon: ChatsCircleIcon, title: 'One point of contact', text: 'You deal with me directly, from the first chat to launch day.' },
     { icon: EyeIcon, title: 'See it before you pay', text: 'Your homepage preview is free, with no obligation.' },
@@ -282,8 +282,8 @@ export const faqs = [
       'Every site is built to be fast, mobile-friendly and search-ready, with proper page titles and descriptions. I’ll also help you set up your Google Business Profile so you can appear in local searches and on Google Maps.',
   },
   {
-    question: 'Do you only work with businesses in Alberton?',
+    question: 'Do you work with businesses outside Johannesburg?',
     answer:
-      'I’m based in Brackenhurst, Alberton and happy to meet local clients in person, but I work with businesses all over South Africa via WhatsApp, email and video calls.',
+      'Yes. I work with businesses all over South Africa — from Cape Town to Johannesburg — over WhatsApp, email and video calls. I’m based in Alberton, Johannesburg, so I’m also happy to meet Gauteng clients in person.',
   },
 ]
