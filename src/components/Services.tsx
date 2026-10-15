@@ -15,8 +15,8 @@ export default function Services() {
       />
       <div className="relative grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <SectionHeading layout="stack" id="services-title" index="03" label="Services" title="What I do." subtitle="Everything your site needs, handled.">
-            From a single landing page to a full online store, I take care of design, build and launch, so you can get back to running your business.
+          <SectionHeading layout="stack" id="services-title" index="03" label="Services" title="What I do." subtitle="Design, build and launch, all handled.">
+            From a single landing page to a full online store, a mobile app or software built to order, I take care of design, build and launch, so you can get back to running your business.
           </SectionHeading>
           <Reveal delay={0.15} className="mt-10">
             <PillLink href={previewCta.href}>{previewCta.label}</PillLink>

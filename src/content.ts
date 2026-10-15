@@ -6,12 +6,14 @@ import {
   ChartLineUpIcon,
   ChatsCircleIcon,
   CodeIcon,
+  DeviceMobileIcon,
   EyeIcon,
   LightningIcon,
   MagicWandIcon,
   PenNibIcon,
   ShieldCheckIcon,
   ShoppingBagOpenIcon,
+  StackIcon,
 } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 
@@ -19,7 +21,7 @@ export const site = {
   name: 'Roland', // the wordmark in the navbar and footer
   businessName: 'Roland Web Design', // the trading name, used in the page title and copyright
   url: 'https://rolandwebdesign.co.za',
-  role: 'Web Designer & Developer',
+  role: 'Designer & Developer',
   // Switch to hello@rolandwebdesign.co.za once the domain and mailbox are set up
   email: 'rolandvtonder@gmail.com',
   whatsapp: {
@@ -205,6 +207,20 @@ export const services: { icon: Icon; title: string; description: string; tags: s
     tags: ['Responsive', 'CMS', 'Integrations'],
   },
   {
+    icon: DeviceMobileIcon,
+    title: 'Mobile Apps',
+    description:
+      'iOS and Android apps that feel fast and natural to use, from a simple booking app to something your whole team runs on every day.',
+    tags: ['iOS & Android', 'Offline-ready', 'Push notifications'],
+  },
+  {
+    icon: StackIcon,
+    title: 'Custom Software',
+    description:
+      'Tools built around how you actually work: dashboards, booking and quoting systems, and the jobs the off-the-shelf options get wrong.',
+    tags: ['Dashboards', 'Integrations', 'Automation'],
+  },
+  {
     icon: ShoppingBagOpenIcon,
     title: 'E-commerce',
     description:
@@ -240,7 +256,7 @@ export const about = {
   subtitle: 'I help growing businesses win more work online.',
   // Draft story: add a personal touch (how you started, what you enjoy) whenever you like.
   paragraphs: [
-    'I’m a web designer and developer based in Johannesburg, South Africa, and I work with clients across South Africa, the United States and beyond — all remotely. I build fast, modern websites for everyone from plumbers and electricians to travel agencies, event companies and crane hire firms, designed to turn visitors into calls, enquiries and bookings.',
+    'I’m a web designer and developer based in Johannesburg, South Africa, and I work with clients across South Africa, the United States and beyond — all remotely. I build fast, modern websites, mobile apps and custom software for everyone from plumbers and electricians to travel agencies, event companies and crane hire firms, designed to turn visitors into calls, enquiries and bookings.',
     'Every project starts the same way: I design a free preview of your homepage, so you can see exactly what you’re getting before you spend a cent. If you love it, I build the rest, take it live and stay just a WhatsApp away for changes.',
   ],
   // PLACEHOLDER: put your photo in /public (e.g. /public/roland.jpg) and set photo: '/roland.jpg'
