@@ -136,7 +136,7 @@ export default function Contact() {
         `Name: ${v.name}`,
         `Business: ${v.business}`,
         `Email: ${v.email}`,
-        ...(v.phone ? [`WhatsApp / phone: ${v.phone}`] : []),
+        ...(v.phone ? [`Phone / WhatsApp: ${v.phone}`] : []),
         ...(v.website ? [`Current website: ${v.website}`] : []),
         '',
         v.message,
@@ -320,13 +320,13 @@ export default function Contact() {
                     <FieldShell id="contact-email" label="Email" required error={shownError('email')}>
                       <input ref={emailRef} type="email" inputMode="email" autoComplete="email" required placeholder="jane@company.com" {...fieldProps('email')} />
                     </FieldShell>
-                    <FieldShell id="contact-phone" label="WhatsApp number" hint="Optional" error={shownError('phone')}>
-                      <input ref={phoneRef} type="tel" inputMode="tel" autoComplete="tel" placeholder="082 123 4567" {...fieldProps('phone')} />
+                    <FieldShell id="contact-phone" label="Phone or WhatsApp" hint="Optional" error={shownError('phone')}>
+                      <input ref={phoneRef} type="tel" inputMode="tel" autoComplete="tel" placeholder="+27 82 123 4567" {...fieldProps('phone')} />
                     </FieldShell>
                   </div>
 
                   <FieldShell id="contact-website" label="Current website" hint="Optional">
-                    <input type="text" inputMode="url" autoComplete="url" placeholder="yourbusiness.co.za, or leave blank if you don’t have one" {...fieldProps('website')} />
+                    <input type="text" inputMode="url" autoComplete="url" placeholder="yourbusiness.com, or leave blank if you don’t have one" {...fieldProps('website')} />
                   </FieldShell>
 
                   <FieldShell id="contact-message" label="About your business" required error={shownError('message')}>

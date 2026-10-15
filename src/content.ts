@@ -23,13 +23,13 @@ export const site = {
   // Switch to hello@rolandwebdesign.co.za once the domain and mailbox are set up
   email: 'rolandvtonder@gmail.com',
   whatsapp: {
-    display: '064 070 3335',
+    display: '+27 64 070 3335',
     number: '27640703335', // international format (27 + number without the leading 0) for wa.me links
     message: 'Hi Roland, I’d like to chat about a website.', // pre-filled when a visitor opens the chat
   },
-  location: 'Alberton, Johannesburg',
+  location: 'Alberton, Johannesburg, South Africa',
   availability: 'Available for projects',
-  responseTime: 'I reply within one business day',
+  responseTime: 'I reply within one business day (SAST / GMT+2)',
   // Paste a free Web3Forms access key (https://web3forms.com) to receive form
   // submissions straight to your inbox. Leave it empty and the contact form
   // opens the visitor's email app with their message ready to send instead.
@@ -59,10 +59,10 @@ export const navLinks = [
 export const hero = {
   badge: 'Available for new projects',
   title: 'Websites That Bring You',
-  titleAccent: 'More Calls & WhatsApps',
+  titleAccent: 'More Calls & Enquiries',
   primaryCta: { label: 'Get a free homepage preview', href: '#contact' },
   blurb:
-    'I design and build fast, modern websites for businesses across South Africa, and I’ll design your homepage first so you can see your new site before you spend a cent.',
+    'I design and build fast, modern websites for growing businesses, and I’ll design your homepage first so you can see your new site before you spend a cent.',
 }
 
 // ── Work ─────────────────────────────────────────────────────────────────
@@ -184,7 +184,7 @@ export const processSteps = [
   },
   {
     title: 'Ongoing support',
-    text: 'Need a change later? Just WhatsApp me. Optional care plans keep everything updated and secure.',
+    text: 'Need a change later? Just email or WhatsApp me. Optional care plans keep everything updated and secure.',
   },
 ]
 
@@ -237,10 +237,10 @@ export const services: { icon: Icon; title: string; description: string; tags: s
 // ── About ────────────────────────────────────────────────────────────────
 export const about = {
   title: 'Hi, I’m Roland.',
-  subtitle: 'I help South African businesses win more work online.',
+  subtitle: 'I help growing businesses win more work online.',
   // Draft story: add a personal touch (how you started, what you enjoy) whenever you like.
   paragraphs: [
-    'I’m a web designer and developer based in Alberton, Johannesburg, and I work with businesses right across South Africa. I build fast, modern websites for everyone from plumbers and electricians to travel agencies, event companies and crane hire firms, designed to turn visitors into calls, WhatsApps and bookings.',
+    'I’m a web designer and developer based in Johannesburg, South Africa, and I work with clients across South Africa, the United States and beyond — all remotely. I build fast, modern websites for everyone from plumbers and electricians to travel agencies, event companies and crane hire firms, designed to turn visitors into calls, enquiries and bookings.',
     'Every project starts the same way: I design a free preview of your homepage, so you can see exactly what you’re getting before you spend a cent. If you love it, I build the rest, take it live and stay just a WhatsApp away for changes.',
   ],
   // PLACEHOLDER: put your photo in /public (e.g. /public/roland.jpg) and set photo: '/roland.jpg'
@@ -282,8 +282,8 @@ export const faqs = [
       'Every site is built to be fast, mobile-friendly and search-ready, with proper page titles and descriptions. I’ll also help you set up your Google Business Profile so you can appear in local searches and on Google Maps.',
   },
   {
-    question: 'Do you work with businesses outside Johannesburg?',
+    question: 'Do you work with clients outside South Africa?',
     answer:
-      'Yes. I work with businesses all over South Africa — from Cape Town to Johannesburg — over WhatsApp, email and video calls. I’m based in Alberton, Johannesburg, so I’m also happy to meet Gauteng clients in person.',
+      'Yes. I’m based in Johannesburg, South Africa, and I work with clients there, in the United States and further afield, entirely remotely over email, video calls and WhatsApp. I’m two hours ahead of UK time and seven ahead of New York, so I keep my mornings free for calls that suit you. Gauteng clients are welcome to meet in person.',
   },
 ]
