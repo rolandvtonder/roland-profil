@@ -30,11 +30,9 @@ jobs:
 
       - run: npm ci
 
+      # The site is served from rolandwebdesign.co.za, so it builds at the
+      # root and needs no BASE_PATH. public/CNAME is what tells Pages the domain.
       - run: npm run build
-        env:
-          # The site lives at rolandvtonder.github.io/roland-profil/, so every
-          # asset needs that prefix. Delete this once a custom domain is set up.
-          BASE_PATH: /roland-profil/
 
       - uses: actions/configure-pages@v5
 
