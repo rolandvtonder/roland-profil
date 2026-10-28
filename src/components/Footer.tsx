@@ -1,16 +1,18 @@
 import { ArrowUpIcon } from '@phosphor-icons/react'
 import LogoMark from './LogoMark'
 import PillLink from './PillLink'
-import { navLinks, previewCta, site, socials, whatsappUrl } from '../content'
+import { navLinks, previewCta, services, site, socials, whatsappUrl } from '../content'
 
 const year = new Date().getFullYear()
-const footerLinks = [...navLinks, { label: 'Contact', href: '#contact' }]
+const footerLinks = [...navLinks, { label: 'Contact', href: '/#contact' }]
 const activeSocials = socials.filter((social) => social.href)
+// Only the services that have a page of their own
+const servicePageLinks = services.filter((s) => s.slug)
 
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-line px-gutter pt-20">
-      <div className="grid gap-12 md:grid-cols-[minmax(0,2fr)_minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]">
         <div>
           <a href="#top" className="inline-flex items-center gap-2.5 rounded-md no-underline" aria-label={`${site.name}, back to top`}>
             <LogoMark size={26} />
@@ -23,6 +25,19 @@ export default function Footer() {
             {previewCta.label}
           </PillLink>
         </div>
+
+        <nav aria-label="Services">
+          <h2 className="text-sm text-ink-subtle">Services</h2>
+          <ul className="mt-4 space-y-1">
+            {servicePageLinks.map((service) => (
+              <li key={service.slug}>
+                <a href={`/services/${service.slug}/`} className="inline-block py-1.5 text-[15px] text-ink-muted no-underline transition-colors hover:text-ink">
+                  {service.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
 
         <nav aria-label="Footer">
           <h2 className="text-sm text-ink-subtle">Navigate</h2>

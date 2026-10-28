@@ -41,7 +41,7 @@ export const site = {
 export const whatsappUrl = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(site.whatsapp.message)}`
 
 // The main call to action, used in the navbar, hero and throughout the page.
-export const previewCta = { label: 'Get a Free Preview', href: '#contact' }
+export const previewCta = { label: 'Get a Free Preview', href: '/#contact' }
 
 // Add a full URL to show a profile in the Contact section and footer.
 export const socials: { label: 'LinkedIn' | 'Instagram' | 'GitHub'; href: string }[] = [
@@ -50,19 +50,20 @@ export const socials: { label: 'LinkedIn' | 'Instagram' | 'GitHub'; href: string
   { label: 'GitHub', href: '' },
 ]
 
+// Root-absolute so they also work from /services/... and /work/... pages
 export const navLinks = [
-  { label: 'Work', href: '#work' },
-  { label: 'How it works', href: '#process' },
-  { label: 'Services', href: '#services' },
-  { label: 'About', href: '#about' },
-  { label: 'FAQ', href: '#faq' },
+  { label: 'Work', href: '/#work' },
+  { label: 'How it works', href: '/#process' },
+  { label: 'Services', href: '/#services' },
+  { label: 'About', href: '/#about' },
+  { label: 'FAQ', href: '/#faq' },
 ]
 
 export const hero = {
   badge: 'Available for new projects',
   title: 'Websites That Bring You',
   titleAccent: 'More Calls & Enquiries',
-  primaryCta: { label: 'Get a free homepage preview', href: '#contact' },
+  primaryCta: { label: 'Get a free homepage preview', href: '/#contact' },
   blurb:
     'I design and build fast, modern websites for growing businesses, and I’ll design your homepage first so you can see your new site before you spend a cent.',
 }
@@ -80,6 +81,8 @@ export type Project = {
   highlights: string[]
   url: string
   image: string
+  /** Slug of a case study page under /work/<slug>/ */
+  caseStudy?: string
   testimonial?: { quote: string; name: string; role: string }
   featured?: boolean
 }
@@ -87,6 +90,7 @@ export type Project = {
 export const projects: Project[] = [
   {
     title: 'LIFTR Co',
+    caseStudy: 'liftr-co',
     category: 'Crane hire · Nationwide',
     status: 'client',
     description:
@@ -98,6 +102,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Flexi Tours',
+    caseStudy: 'flexi-tours',
     category: 'Tour operator · Cape Town',
     status: 'client',
     description:
@@ -191,10 +196,12 @@ export const processSteps = [
 ]
 
 // ── Services ─────────────────────────────────────────────────────────────
-export const services: { icon: Icon; title: string; description: string; tags: string[] }[] = [
+// `slug` links the card to its own page under /services/<slug>/ (see src/pages.ts)
+export const services: { icon: Icon; title: string; description: string; tags: string[]; slug?: string }[] = [
   {
     icon: PenNibIcon,
     title: 'Web Design',
+    slug: 'web-design',
     description:
       'Custom designs shaped around your brand and your customers. No templates, no cookie-cutter layouts.',
     tags: ['UI design', 'Wireframes', 'Prototypes'],
@@ -202,6 +209,7 @@ export const services: { icon: Icon; title: string; description: string; tags: s
   {
     icon: CodeIcon,
     title: 'Web Development',
+    slug: 'web-development',
     description:
       'Hand-built, responsive websites that load fast and work beautifully on every screen size.',
     tags: ['Responsive', 'CMS', 'Integrations'],
@@ -209,6 +217,7 @@ export const services: { icon: Icon; title: string; description: string; tags: s
   {
     icon: DeviceMobileIcon,
     title: 'Mobile Apps',
+    slug: 'mobile-apps',
     description:
       'iOS and Android apps that feel fast and natural to use, from a simple booking app to something your whole team runs on every day.',
     tags: ['iOS & Android', 'Offline-ready', 'Push notifications'],
@@ -216,6 +225,7 @@ export const services: { icon: Icon; title: string; description: string; tags: s
   {
     icon: StackIcon,
     title: 'Custom Software',
+    slug: 'custom-software',
     description:
       'Tools built around how you actually work: dashboards, booking and quoting systems, and the jobs the off-the-shelf options get wrong.',
     tags: ['Dashboards', 'Integrations', 'Automation'],
@@ -223,6 +233,7 @@ export const services: { icon: Icon; title: string; description: string; tags: s
   {
     icon: ShoppingBagOpenIcon,
     title: 'E-commerce',
+    slug: 'ecommerce',
     description:
       'Online stores that are easy for customers to shop and just as easy for you to manage.',
     tags: ['Product pages', 'Checkout', 'Payments'],
@@ -230,6 +241,7 @@ export const services: { icon: Icon; title: string; description: string; tags: s
   {
     icon: ChartLineUpIcon,
     title: 'SEO & Performance',
+    slug: 'seo',
     description:
       'Technical SEO, speed tuning and analytics, so the right people find you and stick around.',
     tags: ['On-page SEO', 'Core Web Vitals', 'Analytics'],

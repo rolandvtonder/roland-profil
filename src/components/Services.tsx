@@ -1,4 +1,5 @@
 import { motion } from 'framer-motion'
+import { ArrowRightIcon } from '@phosphor-icons/react'
 import PillLink from './PillLink'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
@@ -24,7 +25,7 @@ export default function Services() {
         </div>
 
         <ul className="border-b border-line">
-          {services.map(({ icon: Icon, title, description, tags }, i) => (
+          {services.map(({ icon: Icon, title, description, tags, slug }, i) => (
             <motion.li
               key={title}
               initial={{ opacity: 0, y: 20 }}
@@ -39,7 +40,13 @@ export default function Services() {
               <div>
                 <div className="flex items-baseline justify-between gap-4">
                   <h3 className="font-display text-[1.55rem] leading-tight text-ink" style={{ fontWeight: 600, letterSpacing: '-0.01em' }}>
-                    {title}
+                    {slug ? (
+                      <a href={`/services/${slug}/`} className="text-ink no-underline transition-colors hover:text-accent-soft">
+                        {title}
+                      </a>
+                    ) : (
+                      title
+                    )}
                   </h3>
                   <span aria-hidden="true" className="text-sm tabular-nums text-ink-subtle">
                     {String(i + 1).padStart(2, '0')}
@@ -53,6 +60,15 @@ export default function Services() {
                     </li>
                   ))}
                 </ul>
+                {slug && (
+                  <a
+                    href={`/services/${slug}/`}
+                    className="group/more mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-accent-soft no-underline transition-colors hover:text-accent-bright"
+                  >
+                    More on {title}
+                    <ArrowRightIcon size={14} aria-hidden="true" className="transition-transform duration-200 group-hover/more:translate-x-0.5" />
+                  </a>
+                )}
               </div>
             </motion.li>
           ))}

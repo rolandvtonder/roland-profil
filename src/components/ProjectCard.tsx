@@ -1,6 +1,6 @@
 import { asset } from '../lib/asset'
 import { motion } from 'framer-motion'
-import { ArrowUpRightIcon, LockSimpleIcon, QuotesIcon, SealCheckIcon } from '@phosphor-icons/react'
+import { ArrowRightIcon, ArrowUpRightIcon, LockSimpleIcon, QuotesIcon, SealCheckIcon } from '@phosphor-icons/react'
 import { useState } from 'react'
 import type { CSSProperties } from 'react'
 import type { Project } from '../content'
@@ -29,7 +29,7 @@ function StatusBadge({ status }: { status: Project['status'] }) {
 }
 
 export default function ProjectCard({ project, index }: { project: Project; index: number }) {
-  const { title, category, status, description, highlights, url, image, testimonial, featured } = project
+  const { title, category, status, description, highlights, url, image, testimonial, featured, caseStudy } = project
   // Longer pages scroll for longer so every preview moves at a similar pace
   const [scrollSeconds, setScrollSeconds] = useState(7)
 
@@ -117,6 +117,15 @@ export default function ProjectCard({ project, index }: { project: Project; inde
               </li>
             ))}
           </ul>
+          {caseStudy && (
+            <a
+              href={`/work/${caseStudy}/`}
+              className="group/case mt-5 inline-flex items-center gap-1.5 text-[14px] font-medium text-accent-soft no-underline transition-colors hover:text-accent-bright"
+            >
+              Read the {title} case study
+              <ArrowRightIcon size={14} aria-hidden="true" className="transition-transform duration-200 group-hover/case:translate-x-0.5" />
+            </a>
+          )}
           {testimonial && (
             <figure className="mt-6 rounded-2xl border border-line bg-white/[0.02] p-5">
               <QuotesIcon size={22} weight="fill" aria-hidden="true" className="text-accent-soft" />
