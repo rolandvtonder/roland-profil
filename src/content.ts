@@ -35,7 +35,7 @@ export const site = {
   // Paste a free Web3Forms access key (https://web3forms.com) to receive form
   // submissions straight to your inbox. Leave it empty and the contact form
   // opens the visitor's email app with their message ready to send instead.
-  web3formsKey: '',
+  web3formsKey: '60d39be2-defb-43fa-b8e7-c80478d06a75',
 }
 
 export const whatsappUrl = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(site.whatsapp.message)}`
