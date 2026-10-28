@@ -40,7 +40,17 @@ function ShowcaseCard({ image, title, rotate, delay, className }: { image: strin
             {title}
           </span>
         </div>
-        <img src={asset(image)} alt={`${title} website`} loading="lazy" decoding="async" className="h-[150px] w-full object-cover object-top lg:h-[180px]" />
+        {/* The small crop, not the full-page screenshot: these render about
+            340px wide, so the 1280px originals were ~400KB each for nothing */}
+        <img
+          src={asset(image.replace('/work/', '/work/thumbs/'))}
+          alt={`${title} website`}
+          width={720}
+          height={480}
+          loading="lazy"
+          decoding="async"
+          className="h-[150px] w-full object-cover object-top lg:h-[180px]"
+        />
       </motion.div>
     </motion.div>
   )
