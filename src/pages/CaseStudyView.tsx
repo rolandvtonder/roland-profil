@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon, LockSimpleIcon, SealCheckIcon } from '@phosphor-icons/react'
+import { ArrowUpRightIcon, LockSimpleIcon, PencilSimpleIcon, SealCheckIcon } from '@phosphor-icons/react'
 import PageShell from '../components/PageShell'
 import SubPageHero from '../components/SubPageHero'
 import FaqList from '../components/FaqList'
@@ -18,6 +18,7 @@ export default function CaseStudyView({ slug }: { slug: string }) {
   if (!study) throw new Error(`No case study for slug "${slug}"`)
   const project = projects.find((p) => p.title === study.project)
   if (!project) throw new Error(`No project named "${study.project}" in content.ts`)
+  const isClient = study.status === 'client'
 
   return (
     <PageShell>
@@ -27,7 +28,7 @@ export default function CaseStudyView({ slug }: { slug: string }) {
         heading={study.heading}
         headingAccent={study.headingAccent}
         intro={study.intro}
-        secondaryCta={{ label: `Visit ${displayAddress(project.url)}`, href: project.url, external: true }}
+        secondaryCta={{ label: isClient ? `Visit ${displayAddress(project.url)}` : 'View the concept', href: project.url, external: true }}
       >
         <Reveal delay={0.35} className="mt-12">
           <dl className="grid gap-px overflow-hidden rounded-2xl border border-line bg-line sm:grid-cols-2 lg:grid-cols-4">
@@ -39,6 +40,15 @@ export default function CaseStudyView({ slug }: { slug: string }) {
             ))}
           </dl>
         </Reveal>
+        {!isClient && (
+          <Reveal delay={0.4} className="mt-8">
+            <p className="max-w-[62ch] rounded-2xl border border-line bg-surface/50 px-5 py-4 text-[14.5px] leading-relaxed text-ink-muted">
+              <strong className="font-semibold text-ink">This is a concept, not a commissioned project.</strong> I designed and
+              built it myself to show {project.title} what their website could be. It is my work and my decisions throughout,
+              but they did not hire me for it.
+            </p>
+          </Reveal>
+        )}
       </SubPageHero>
 
       {/* The site itself */}
@@ -75,10 +85,17 @@ export default function CaseStudyView({ slug }: { slug: string }) {
           </a>
         </Reveal>
         <Reveal delay={0.1} className="mt-6 flex flex-wrap items-center gap-4">
-          <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[13px] text-accent-soft">
-            <SealCheckIcon size={13} weight="fill" aria-hidden="true" />
-            Client project
-          </span>
+          {isClient ? (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-accent/30 bg-accent/10 px-3 py-1 text-[13px] text-accent-soft">
+              <SealCheckIcon size={13} weight="fill" aria-hidden="true" />
+              Client project
+            </span>
+          ) : (
+            <span className="inline-flex items-center gap-1.5 rounded-full border border-line-strong bg-white/[0.04] px-3 py-1 text-[13px] text-ink-muted">
+              <PencilSimpleIcon size={13} aria-hidden="true" />
+              Concept
+            </span>
+          )}
           <span className="text-[14px] text-ink-subtle">{project.category}</span>
           <a
             href={project.url}

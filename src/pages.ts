@@ -296,6 +296,13 @@ export type CaseStudy = {
   slug: string
   /** Must match a `title` in `projects` in content.ts, so the screenshot and links are reused. */
   project: string
+  /**
+   * 'client' = a paid, live project. 'concept' = a redesign Roland designed and
+   * built unprompted to pitch the business. Concept pages say so plainly, and
+   * their titles target the industry rather than the company name so they don't
+   * compete with the real business for its own name.
+   */
+  status: 'client' | 'concept'
   title: string
   description: string
   heading: string
@@ -313,6 +320,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'liftr-co',
     project: 'LIFTR Co',
+    status: 'client',
     title: 'Crane Hire Website Case Study | LIFTR Co',
     description:
       'How I designed and built the website for LIFTR Co, a nationwide crane hire and lifting company: service pages, a lift gallery, plant sales and WhatsApp quoting.',
@@ -351,6 +359,7 @@ export const caseStudies: CaseStudy[] = [
   {
     slug: 'flexi-tours',
     project: 'Flexi Tours',
+    status: 'client',
     title: 'Tour Operator Website Case Study | Flexi Tours Cape Town',
     description:
       'How I redesigned the Flexi Tours website: Cape Town day tours, safaris, packages, airport transfers and travel guides, with WhatsApp booking throughout.',
@@ -384,6 +393,240 @@ export const caseStudies: CaseStudy[] = [
       { question: 'Do you build websites for tour operators and travel agencies?', answer: 'Yes, and it is the sector I have done the most work in. Flexi Tours is a live client; Sure Penzance Travel, Lara Travel and Travel Delight are concept redesigns in my portfolio.' },
       { question: 'Can you add online booking and payments?', answer: 'Yes. Whether you need full online booking or a WhatsApp enquiry depends on your tours and how you handle availability, and we work that out before building.' },
       { question: 'Will a redesign lose my Google ranking?', answer: 'Not if it is done properly. Existing content and addresses are preserved and redirected, so the history you have built carries over to the new site.' },
+    ],
+  },
+  {
+    slug: 'emergency-plumber-website',
+    project: 'Drip Dry Plumbing',
+    status: 'concept',
+    title: 'Plumber Website Design | Concept Case Study',
+    description:
+      'A concept website design for a family-run plumbing business, built around 24-hour call-outs, one-tap calling and the trust signals that win emergency jobs.',
+    heading: 'A plumber\u2019s site',
+    headingAccent: 'built for 2am.',
+    intro:
+      'Nobody browses for a plumber. They search when water is coming through a ceiling, they pick from the first few results, and they call. This concept is designed entirely around that moment: who you are, that you answer at night, and a phone number that is never more than a thumb away.',
+    client: [
+      { label: 'Business', value: 'Drip Dry Plumbing' },
+      { label: 'Industry', value: 'Plumbing' },
+      { label: 'Based', value: 'Roodepoort' },
+      { label: 'Type', value: 'Concept redesign' },
+    ],
+    brief:
+      'Emergency trades have a particular problem: the customer is stressed, on a phone, and comparing three companies in under a minute. They are not reading your about page. They want to know that you cover their area, that you will actually come out tonight, and that the last person who called you was glad they did.',
+    built: [
+      { title: 'Call button fixed to the screen', text: 'On a phone the number follows you down the page. In an emergency the gap between deciding and dialling should be zero.' },
+      { title: '24-hour call-outs stated at the top', text: 'The single most important fact about an emergency plumber, placed where it cannot be missed rather than halfway down a services list.' },
+      { title: 'Services in plain language', text: 'Burst pipes, blocked drains, geysers, leak detection. The words customers actually type, not trade terminology.' },
+      { title: 'Reviews doing the reassuring', text: 'Real ratings near the top, because a stranger vouching for you beats anything you can say about yourself.' },
+      { title: 'Service areas spelled out', text: 'Which suburbs are covered, so nobody wastes a call and you waste no time on jobs too far out.' },
+    ],
+    decisions: [
+      { title: 'Design for one hand and one thumb', text: 'Every important action sits in the lower half of the screen, where a thumb reaches without shifting grip.' },
+      { title: 'Trust before selling', text: 'Years in business, number of jobs, Google rating, all above the fold. In a trade where people fear being overcharged, proof comes first.' },
+      { title: 'No enquiry form on the homepage', text: 'A form is the wrong tool for an emergency. Call and WhatsApp are the actions; the form lives on the contact page for non-urgent work.' },
+    ],
+    outcome:
+      'A concept that turns a plumbing website into what it should be: the shortest possible path between a panicking homeowner and a phone ringing.',
+    faqs: [
+      { question: 'Do you build websites for plumbers and trades?', answer: 'Yes. Trade websites have a specific job, which is to turn a search into a phone call as fast as possible. This concept and the JPM Plumbing & Electrical one both show that approach.' },
+      { question: 'What should a plumber\u2019s website have on it?', answer: 'A phone number that is always visible, your hours and whether you do call-outs, the areas you cover, your services in the words customers use, and reviews. Everything else is secondary.' },
+      { question: 'Is this a real client project?', answer: 'No. This is a concept I designed and built to show what the business could have. It was pitched to them rather than commissioned.' },
+    ],
+  },
+  {
+    slug: 'plumbing-electrical-website',
+    project: 'JPM Plumbing & Electrical',
+    status: 'concept',
+    title: 'Trade Website with Quote Form | Concept Case Study',
+    description:
+      'A concept website for a combined plumbing and electrical business: services, before-and-after work, service areas, FAQs and a quote request form.',
+    heading: 'Two trades,',
+    headingAccent: 'one clear website.',
+    intro:
+      'A company doing both plumbing and electrical work has a positioning problem. Say too little and you look like a handyman; say too much and nobody knows what you actually specialise in. This concept splits the two cleanly and lets the completed work make the case.',
+    client: [
+      { label: 'Business', value: 'JPM Plumbing & Electrical' },
+      { label: 'Industry', value: 'Plumbing and electrical' },
+      { label: 'Based', value: 'Johannesburg' },
+      { label: 'Type', value: 'Concept redesign' },
+    ],
+    brief:
+      'Unlike an emergency call-out, much of this work is planned: a rewire, a geyser replacement, a certificate of compliance. The customer has time to compare, which means they will read more and expect to see evidence. The site has to carry proof and make requesting a quote effortless.',
+    built: [
+      { title: 'Plumbing and electrical kept separate', text: 'Two clear paths from the homepage, so a customer with an electrical problem never has to wade through plumbing services.' },
+      { title: 'Before and after projects', text: 'Photographs of finished work. In a trade people cannot assess, showing the standard is the entire argument.' },
+      { title: 'A quote form that gets used', text: 'Short, with a photo upload, because a picture of the problem saves two phone calls.' },
+      { title: 'Service areas and FAQs', text: 'The two things that generate the most time-wasting phone calls, answered on the page instead.' },
+      { title: 'Compliance and certification visible', text: 'For electrical work this is non-negotiable to customers, and most trade sites bury it.' },
+    ],
+    decisions: [
+      { title: 'Lead with completed work, not a stock photo', text: 'A real geyser installation beats a smiling model in overalls every time.' },
+      { title: 'Let the FAQ do the filtering', text: 'Answering "do you issue a CoC" and "do you charge a call-out fee" upfront means better calls, not fewer.' },
+      { title: 'One form, reachable from everywhere', text: 'Rather than scattering different enquiry routes, every call to action points at the same quote request.' },
+    ],
+    outcome:
+      'A concept showing how a two-trade business can look specialised in both, with finished work carrying the credibility and a quote request always one click away.',
+    faqs: [
+      { question: 'Can a website cover two different trades without looking confused?', answer: 'Yes, if the two are separated from the homepage onwards rather than merged into one services list. This concept shows that structure.' },
+      { question: 'Should a trade website have a quote form or just a phone number?', answer: 'Both, used for different things. Emergencies need a phone number; planned work suits a form, particularly one that lets someone attach a photo of the problem.' },
+      { question: 'Is this a real client project?', answer: 'No. This is a concept I designed and built to pitch to the business rather than a commissioned job.' },
+    ],
+  },
+  {
+    slug: 'travel-agency-website',
+    project: 'Sure Penzance Travel',
+    status: 'concept',
+    title: 'Travel Agency Website Design | Concept Case Study',
+    description:
+      'A concept website design for an established travel agency: a full-screen destination slideshow, hand-picked holiday specials and corporate travel services.',
+    heading: 'A travel agency site',
+    headingAccent: 'that sells the destination.',
+    intro:
+      'Travel agencies compete with booking sites that have endless budgets and no personality. What an agency has instead is judgement: somebody who has been there, knows which hotel is worth it, and will answer the phone when a flight is cancelled. This concept puts that front and centre.',
+    client: [
+      { label: 'Business', value: 'Sure Penzance Travel' },
+      { label: 'Industry', value: 'Travel agency' },
+      { label: 'Based', value: 'Alberton' },
+      { label: 'Type', value: 'Concept redesign' },
+    ],
+    brief:
+      'An established agency with a long client list and a website that did not reflect it. The job was to make it look like a place that plans serious trips, while keeping the specials, which are what actually drive enquiries, easy to find and easy to act on.',
+    built: [
+      { title: 'A full-screen destination slideshow', text: 'Travel is sold on feeling first. Large photography of real destinations opens the site rather than a form.' },
+      { title: 'Hand-picked holiday specials', text: 'Current deals as proper cards with price and dates, because this is what returning visitors come back to check.' },
+      { title: 'Corporate travel given its own route', text: 'Business travel buyers have nothing in common with someone booking a honeymoon, so they get their own path.' },
+      { title: 'A human face on the agency', text: 'Who you will be dealing with, which is the one thing a booking site can never offer.' },
+      { title: 'Enquiry rather than checkout', text: 'The sale happens in conversation, so every card leads to a short enquiry rather than a cart.' },
+    ],
+    decisions: [
+      { title: 'Photography over interface', text: 'Big images, minimal chrome. An agency site competing on warmth should not look like a flight comparison tool.' },
+      { title: 'Specials above the fold on return visits', text: 'The deals are the hook, so they sit high rather than behind a menu.' },
+      { title: 'Leisure and corporate split early', text: 'Two audiences, two journeys, decided on the homepage.' },
+    ],
+    outcome:
+      'A concept that gives an established agency a site matching its experience, leading with destinations and letting the specials do the converting.',
+    faqs: [
+      { question: 'Do you build websites for travel agencies?', answer: 'It is the sector I have done the most work in. Flexi Tours is a live client; this, Lara Travel and Travel Delight are concept redesigns showing different angles on the same industry.' },
+      { question: 'What makes a travel website convert?', answer: 'Strong photography, current specials that are easy to find, pricing that is not hidden, and a short enquiry route. Travel buyers compare across tabs, so anything that slows them down loses them.' },
+      { question: 'Is this a real client project?', answer: 'No. This is a concept redesign I built to pitch to the agency, not a commissioned project.' },
+    ],
+  },
+  {
+    slug: 'corporate-travel-website',
+    project: 'Lara Travel',
+    status: 'concept',
+    title: 'Corporate Travel Website Design | Concept Case Study',
+    description:
+      'A concept website for a travel agency covering corporate, group and leisure travel, with destination guides, team profiles and Google reviews.',
+    heading: 'Corporate travel,',
+    headingAccent: 'without the brochure feel.',
+    intro:
+      'Corporate travel is bought on reliability, not romance. A procurement manager booking flights for twelve staff wants to know you will handle a 3am change without drama. This concept is built for that buyer while still serving the leisure side of the business.',
+    client: [
+      { label: 'Business', value: 'Lara Travel' },
+      { label: 'Industry', value: 'Corporate, group and leisure travel' },
+      { label: 'Based', value: 'Johannesburg' },
+      { label: 'Type', value: 'Concept redesign' },
+    ],
+    brief:
+      'Three audiences through one front door: companies booking business travel, groups organising a trip together, and individuals planning a holiday. Each wants something different, and a single homepage trying to please all three ends up convincing none of them.',
+    built: [
+      { title: 'Three clear routes from the homepage', text: 'Corporate, group and leisure, chosen in the first few seconds rather than guessed at.' },
+      { title: 'Destination guides', text: 'Useful content that brings in search traffic from people researching a trip before they are ready to book.' },
+      { title: 'Team profiles', text: 'Named consultants with photographs. Corporate buyers want to know who picks up the phone.' },
+      { title: 'Google reviews on the page', text: 'Pulled through rather than retyped, so they stay current and are visibly genuine.' },
+      { title: 'A corporate enquiry built for procurement', text: 'Different questions, different tone, different expectations from a holiday enquiry.' },
+    ],
+    decisions: [
+      { title: 'Confidence over wanderlust', text: 'Restrained design and clear structure. Corporate buyers read sunset photography as a consumer brand, which costs credibility.' },
+      { title: 'Guides as the top of the funnel', text: 'Most people search a destination long before they search an agency. The guides catch them early.' },
+      { title: 'Show the people', text: 'The whole argument for an agency over a booking site is that a person handles it. So show the people.' },
+    ],
+    outcome:
+      'A concept that serves a corporate buyer and a holiday booker from the same site without diluting either, with guides pulling in traffic and real reviews closing the gap.',
+    faqs: [
+      { question: 'How is a corporate travel website different from a leisure one?', answer: 'The buyer is different. Corporate wants reliability, named contacts, clear process and fast response. Leisure wants inspiration and price. Trying to do both with the same page tends to fail at both.' },
+      { question: 'Can you pull live Google reviews onto a website?', answer: 'Yes. Showing them live rather than retyping keeps them current, and visitors can tell the difference.' },
+      { question: 'Is this a real client project?', answer: 'No. This is a concept redesign built to pitch to the agency rather than a commissioned job.' },
+    ],
+  },
+  {
+    slug: 'group-travel-website',
+    project: 'Travel Delight',
+    status: 'concept',
+    title: 'Group Travel Website Design | Concept Case Study',
+    description:
+      'A concept website for a group travel specialist planning choir, school and family tours, with featured journeys, a destinations map and trip galleries.',
+    heading: 'Group tours,',
+    headingAccent: 'sold to the organiser.',
+    intro:
+      'Group travel has an unusual customer: one person organising a trip for thirty others, who will be blamed personally if it goes wrong. They are not buying a holiday, they are buying the confidence to stand up in front of a committee and recommend you.',
+    client: [
+      { label: 'Business', value: 'Travel Delight' },
+      { label: 'Industry', value: 'Group and educational travel' },
+      { label: 'Based', value: 'Johannesburg' },
+      { label: 'Type', value: 'Concept redesign' },
+    ],
+    brief:
+      'Choir tours, school trips and extended family travel all run on the same anxiety: a lot of people, a lot of money, one organiser carrying the risk. The site has to show previous groups coming home happy, and make the first conversation easy to start.',
+    built: [
+      { title: 'Featured journeys as full itineraries', text: 'Day by day, with what is included, because an organiser has to present this to other people.' },
+      { title: 'A destinations map', text: 'Where they have taken groups before, shown geographically. It communicates range faster than a list.' },
+      { title: 'Galleries from previous trips', text: 'Real groups on real tours. For an organiser weighing up the risk, this is the strongest evidence available.' },
+      { title: 'Built around group types', text: 'Choirs, schools and families each have different concerns, so each gets its own path.' },
+      { title: 'An enquiry suited to planning', text: 'Group size, rough dates and purpose, which is what actually starts a useful conversation.' },
+    ],
+    decisions: [
+      { title: 'Cinematic, but with substance underneath', text: 'Big imagery to carry the feeling, immediately followed by detail the organiser needs to justify the choice.' },
+      { title: 'Lead with past groups, not destinations', text: 'The destination is rarely the question. Whether you can look after thirty people is.' },
+      { title: 'No pricing, deliberately', text: 'Group pricing depends on numbers and dates. Showing a figure that cannot hold creates a worse conversation than none.' },
+    ],
+    outcome:
+      'A concept aimed squarely at the person organising the trip, with previous groups providing the reassurance and itineraries detailed enough to forward to a committee.',
+    faqs: [
+      { question: 'Do you build websites for group and educational travel?', answer: 'Yes. Group travel has a distinct buyer, the organiser, and sites that address them directly work far better than ones written for an individual traveller.' },
+      { question: 'Should a travel website show prices?', answer: 'For fixed products, yes. For group travel, where price depends on numbers and dates, a figure that cannot be honoured usually causes more problems than it solves.' },
+      { question: 'Is this a real client project?', answer: 'No. This is a concept redesign I built to pitch to the business rather than a commissioned project.' },
+    ],
+  },
+  {
+    slug: 'event-hire-website',
+    project: 'Flexi Hire',
+    status: 'concept',
+    title: 'Event & Tent Hire Website Design | Concept Case Study',
+    description:
+      'A concept website for a tent and event furniture hire company: hire catalogue, ready-made seating packages and quick WhatsApp quotes.',
+    heading: 'An event hire site',
+    headingAccent: 'that quotes in a tap.',
+    intro:
+      'Someone planning a wedding or a function is juggling a venue, caterers, furniture and a budget that keeps moving. They are getting quotes from four hire companies at once. The one that answers fastest, with the clearest pricing, usually wins the job.',
+    client: [
+      { label: 'Business', value: 'Flexi Hire' },
+      { label: 'Industry', value: 'Tent and event furniture hire' },
+      { label: 'Based', value: 'Centurion' },
+      { label: 'Type', value: 'Concept redesign' },
+    ],
+    brief:
+      'Hire businesses lose work to slow quoting. The customer has a date, a headcount and a budget, and wants a number. Anything that makes them wait or fill in a long form sends them to a competitor who replied in ten minutes.',
+    built: [
+      { title: 'A browsable hire catalogue', text: 'Tents, tables, chairs, linen and decor with photographs and capacities, so people can see what they are getting.' },
+      { title: 'Ready-made packages', text: 'Seating for 50, 100 or 200 priced as a bundle. Most customers do not know what they need item by item.' },
+      { title: 'WhatsApp quoting', text: 'A tap sends an enquiry with the items already attached, turning a quote into a short conversation.' },
+      { title: 'Availability made plain', text: 'Hire is a date business. Asking for the date first avoids quoting on stock that is already out.' },
+      { title: 'Real events as the gallery', text: 'Set-ups at actual functions, which shows scale far better than a product photo on white.' },
+    ],
+    decisions: [
+      { title: 'Packages before individual items', text: 'A customer planning their first event wants a starting point, not a parts list.' },
+      { title: 'Prices where possible', text: 'Even indicative pricing filters out the wrong enquiries and builds trust with the right ones.' },
+      { title: 'WhatsApp over a quote form', text: 'Hire enquiries involve back and forth about dates and numbers. A chat suits that; an email thread does not.' },
+    ],
+    outcome:
+      'A concept built around the thing that decides hire jobs: how quickly and clearly you can turn a date and a headcount into a number.',
+    faqs: [
+      { question: 'Do you build websites for hire companies?', answer: 'Yes. Hire businesses need a catalogue with real specifications, package options, and a fast quoting route. This concept and the LIFTR Co crane hire project both show that.' },
+      { question: 'Should a hire company show prices online?', answer: 'Where possible, yes, at least as a starting range. Hidden pricing costs you the customers who were comparing, and they are most of them.' },
+      { question: 'Is this a real client project?', answer: 'No. This is a concept I designed and built to pitch to the business, not a commissioned job.' },
     ],
   },
 ]

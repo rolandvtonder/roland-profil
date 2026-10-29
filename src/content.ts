@@ -114,6 +114,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Drip Dry Plumbing',
+    caseStudy: 'emergency-plumber-website',
     category: 'Plumbing · Roodepoort',
     status: 'concept',
     description:
@@ -124,6 +125,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Sure Penzance Travel',
+    caseStudy: 'travel-agency-website',
     category: 'Travel agency · Alberton',
     status: 'concept',
     description:
@@ -134,6 +136,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Flexi Hire',
+    caseStudy: 'event-hire-website',
     category: 'Event hire · Centurion',
     status: 'concept',
     description:
@@ -144,6 +147,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Lara Travel',
+    caseStudy: 'corporate-travel-website',
     category: 'Travel agency · Johannesburg',
     status: 'concept',
     description:
@@ -154,6 +158,7 @@ export const projects: Project[] = [
   },
   {
     title: 'JPM Plumbing & Electrical',
+    caseStudy: 'plumbing-electrical-website',
     category: 'Plumbing & electrical · Johannesburg',
     status: 'concept',
     description:
@@ -164,6 +169,7 @@ export const projects: Project[] = [
   },
   {
     title: 'Travel Delight',
+    caseStudy: 'group-travel-website',
     category: 'Group travel · Johannesburg',
     status: 'concept',
     description:
