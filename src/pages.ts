@@ -318,6 +318,48 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: 'safari-travel-website',
+    project: 'Flexi Travel & Safari',
+    status: 'client',
+    title: 'Safari Website Design Case Study | Flexi Travel & Safari',
+    description:
+      'How I designed and built flexitravelandsafari.com: African safaris sold to Europe and America, European holidays sold to Southern Africa, and a payment plan built into the site.',
+    heading: 'One brand,',
+    headingAccent: 'two opposite markets.',
+    intro:
+      'Flexi Travel & Safari sells African safaris to travellers in Europe and America, and European holidays to travellers in South Africa, Botswana and Namibia. Two audiences who share almost nothing: different continents, different currencies, different reasons to book and different fears about doing it.',
+    client: [
+      { label: 'Client', value: 'Flexi Travel & Safari' },
+      { label: 'Industry', value: 'Safari and international travel' },
+      { label: 'Markets', value: 'Europe, America, Southern Africa' },
+      { label: 'Scope', value: 'Design, build, SEO, launch' },
+    ],
+    brief:
+      'Most travel sites address one kind of traveller. This one had to address two who want opposite things, without either feeling they had landed somewhere meant for someone else. A visitor in Madrid looking at safaris and a visitor in Johannesburg saving for Spain needed to find their half within seconds of arriving.',
+    built: [
+      { title: 'Two front doors, one homepage', text: 'The site splits at the top into African Safaris and European Adventures, each labelled with who it is for. Nobody has to work out which half is theirs.' },
+      { title: 'Prices in the right currency', text: 'Safaris quoted in euros for the European market, European trips in rand for the Southern African one. Asking somebody to convert is asking them to leave.' },
+      { title: 'A payment plan built into the product', text: 'European holidays can be paid monthly over up to twelve months before departure. That is the reason this business wins bookings, so it gets its own page and sits in every itinerary card.' },
+      { title: 'Signature itineraries with real detail', text: 'Duration, nights, countries and a from-price on every card, because travellers compare before they enquire and hidden pricing loses them.' },
+      { title: 'The founder\u2019s story told properly', text: 'She grew up in Hwange, Zimbabwe, where elephants wandered out of the reserve into her uncles\u2019 fields, and now lives in Spain. That story is the entire differentiator against a booking site, so it gets room.' },
+      { title: 'Travel guides for search', text: 'Content aimed at people researching a destination months before they are ready to book, bringing them in early.' },
+    ],
+    decisions: [
+      { title: 'Split the audience, not the brand', text: 'Two separate sites would have halved the credibility and doubled the upkeep. One brand with two clear routes keeps the story whole and the admin sane.' },
+      { title: 'Lead with feeling, follow immediately with facts', text: 'Full-bleed photography to carry the idea, then days, nights, countries and price directly underneath. Travel is decided emotionally and justified practically.' },
+      { title: 'Make the payment plan a headline, not small print', text: 'For a South African paying for Europe, spreading the cost over twelve months is the deciding factor. Burying it in terms would have wasted the best argument on the site.' },
+      { title: 'Segment the safaris by who is travelling', text: 'Couples, families, women travelling together and the well-travelled each want a different trip. Sorting by traveller rather than by country matches how people actually choose.' },
+    ],
+    outcome:
+      'A single site that serves two continents without compromise: a European visitor finds safaris priced in euros, a South African visitor finds Europe priced in rand and payable monthly, and both meet the same founder\u2019s story on the way through.',
+    faqs: [
+      { question: 'Can one website serve two completely different markets?', answer: 'Yes, if the split happens immediately and each route is complete on its own. The mistake is blending both audiences into one homepage, which leaves neither convinced. This site splits at the top and keeps currency, pricing and tone consistent within each half.' },
+      { question: 'Do you build websites for safari and tour operators?', answer: 'Yes, it is the sector I have done the most work in. Flexi Travel & Safari and Flexi Tours are both live client sites, and there are several concept redesigns for travel agencies in my portfolio.' },
+      { question: 'Can you show prices in more than one currency?', answer: 'Yes. On this site safaris are quoted in euros for the European and American market and European trips in rand for Southern Africa, because asking someone to do the conversion themselves costs you enquiries.' },
+      { question: 'Can a website handle payment plans or deposits?', answer: 'Yes. This one presents a twelve-month payment schedule as part of the product, with dates agreed upfront. Full online payment handling can be added where the business needs it.' },
+    ],
+  },
+  {
     slug: 'liftr-co',
     project: 'LIFTR Co',
     status: 'client',

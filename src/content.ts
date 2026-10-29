@@ -89,6 +89,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'Flexi Travel & Safari',
+    caseStudy: 'safari-travel-website',
+    category: 'Safari & travel · Spain and South Africa',
+    status: 'client',
+    description:
+      'A website for a travel company serving two opposite markets from one brand: African safaris sold to Europe and America, and European holidays sold to Southern Africa on a twelve-month payment plan.',
+    highlights: ['Two audiences', 'Signature itineraries', 'Monthly payment plans', 'Travel guides'],
+    url: 'https://flexitravelandsafari.com/',
+    image: '/work/flexi-travel-safari.webp',
+    featured: true,
+  },
+  {
     title: 'LIFTR Co',
     caseStudy: 'liftr-co',
     category: 'Crane hire · Nationwide',
