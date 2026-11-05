@@ -40,6 +40,8 @@ export type ServicePage = {
   includes: { title: string; text: string }[]
   process: { step: string; title: string; text: string }[]
   goodFor: string[]
+  /** Optional 'what I am working on right now' note under the intro. */
+  liveWork?: { label: string; text: string }
   faqs: FaqItem[]
   /** Project titles from content.ts to show at the bottom as proof. */
   relatedProjects: string[]
@@ -56,6 +58,10 @@ export const servicePages: ServicePage[] = [
     headingAccent: 'that are not just boosted posts.',
     intro:
       'Most small businesses have tried advertising on Facebook. They pressed Boost on a post that was doing well, spent a few hundred rand, got some likes from people who already follow them, and decided ads do not work. That is not advertising. That is paying Meta to show your post to a slightly bigger version of the same audience.',
+    liveWork: {
+      label: 'Running now',
+      text: 'I currently run campaigns for Flexi Travel & Safari, a client whose website I also built, across separate European and African safari audiences. Around 20 000 people reached a month on deliberately small test budgets while we work out which audiences and which wording actually convert.',
+    },
     problem: {
       title: 'Boosting a post is not running an ad',
       body: 'The Boost button gives you almost none of the controls that make advertising work: who sees it, what happens when they click, and whether any of it turned into money. A real campaign picks an objective, targets people by what they do rather than who already follows you, sends them somewhere built to convert, and measures the result. Same platform, completely different machine underneath, and the difference is usually the entire return.',

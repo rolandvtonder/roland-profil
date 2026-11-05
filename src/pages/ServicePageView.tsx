@@ -66,6 +66,22 @@ export default function ServicePageView({ slug, kind = 'service' }: { slug: stri
         secondaryCta={{ label: 'See my recent work', href: '/#work' }}
       />
 
+      {/* Proof of current work, where there is any */}
+      {page.liveWork && (
+        <section className="px-gutter pb-20 md:pb-24">
+          <Reveal className="flex flex-col gap-4 rounded-2xl border border-accent/25 bg-accent/[0.05] px-6 py-6 sm:flex-row sm:items-start sm:gap-6 sm:px-8">
+            <span className="inline-flex shrink-0 items-center gap-2 rounded-full border border-accent/40 bg-accent/10 px-3 py-1 text-[12.5px] font-medium tracking-[0.04em] text-accent-soft uppercase">
+              <span aria-hidden="true" className="relative flex h-1.5 w-1.5">
+                <span className="absolute inset-0 animate-ping rounded-full bg-accent-bright opacity-70 motion-reduce:hidden" />
+                <span className="relative h-1.5 w-1.5 rounded-full bg-accent-bright" />
+              </span>
+              {page.liveWork.label}
+            </span>
+            <p className="max-w-[72ch] text-[15.5px] leading-relaxed text-ink-muted">{page.liveWork.text}</p>
+          </Reveal>
+        </section>
+      )}
+
       {/* The problem this service exists to solve */}
       <section className="px-gutter pb-24 md:pb-32">
         <Reveal className="grid gap-8 rounded-3xl border border-line bg-surface/50 px-7 py-10 sm:px-12 sm:py-12 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.3fr)] lg:gap-16">
