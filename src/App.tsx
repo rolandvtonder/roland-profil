@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MotionConfig } from 'framer-motion'
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
+import ClientStrip from './components/ClientStrip'
 import Work from './components/Work'
 import HowItWorks from './components/HowItWorks'
 import Services from './components/Services'
@@ -24,6 +25,7 @@ function App() {
       <div inert={menuOpen}>
         <main id="main" tabIndex={-1} className="w-full outline-none">
           <Hero />
+          <ClientStrip />
           <Work />
           <HowItWorks />
           <Services />
