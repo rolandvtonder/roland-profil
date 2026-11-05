@@ -2,7 +2,7 @@ import { motion } from 'framer-motion'
 import { ArrowRightIcon, CheckIcon, ShieldCheckIcon } from '@phosphor-icons/react'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
-import { carePlan, packages, pricingNote } from '../content'
+import { carePlans, packages, pricingNote } from '../content'
 import { easeOutSoft, revealViewport } from '../lib/motion'
 
 /** R7 500 rather than R7,500 — the local convention. */
@@ -86,27 +86,44 @@ export default function Pricing({ heading = true }: { heading?: boolean } = {}) 
           ))}
         </ul>
 
-        {/* Care plan: the recurring half of the offer */}
-        <Reveal className="mt-10 grid gap-8 rounded-3xl border border-line bg-surface/40 px-7 py-8 sm:px-10 lg:grid-cols-[minmax(0,1fr)_minmax(0,1.5fr)] lg:items-center lg:gap-14">
-          <div>
-            <h3 className="flex items-center gap-2.5 font-display text-[1.3rem] text-ink" style={{ fontWeight: 600 }}>
-              <ShieldCheckIcon size={20} weight="light" aria-hidden="true" className="text-accent-soft" />
-              {carePlan.name}
+        {/* Care plans: the recurring half of the offer */}
+        <Reveal className="mt-10">
+          <div className="mb-6 flex items-baseline gap-3">
+            <ShieldCheckIcon size={20} weight="light" aria-hidden="true" className="translate-y-0.5 text-accent-soft" />
+            <h3 className="font-display text-[1.4rem] text-ink" style={{ fontWeight: 600 }}>
+              Keeping it running
             </h3>
-            <p className="mt-3 flex items-baseline gap-1.5">
-              <span className="text-[13px] text-ink-subtle">from</span>
-              <span className="font-display text-[1.9rem] leading-none tracking-[-0.02em] text-ink" style={{ fontWeight: 700 }}>
-                {rand(carePlan.price)}
-              </span>
-              <span className="text-[14px] text-ink-subtle">/month</span>
-            </p>
-            <p className="mt-3 text-[14.5px] text-ink-muted">{carePlan.tagline}</p>
+            <span className="text-[14px] text-ink-subtle">Optional, cancel any time</span>
           </div>
-          <ul className="grid gap-3 sm:grid-cols-2">
-            {carePlan.includes.map((item) => (
-              <li key={item} className="flex items-start gap-2.5 text-[14.5px] leading-relaxed text-ink-muted">
-                <CheckIcon size={15} weight="bold" aria-hidden="true" className="mt-1 shrink-0 text-accent-soft" />
-                {item}
+          <ul className="grid gap-6 sm:grid-cols-2">
+            {carePlans.map((tier) => (
+              <li
+                key={tier.name}
+                className={`flex flex-col rounded-3xl border p-7 ${
+                  tier.recommended ? 'border-accent/45 bg-accent/[0.06]' : 'border-line bg-surface/50'
+                }`}
+              >
+                <div className="flex items-baseline justify-between gap-4">
+                  <h4 className="font-display text-[1.2rem] text-ink" style={{ fontWeight: 600 }}>
+                    {tier.name}
+                  </h4>
+                  <p className="flex items-baseline gap-1.5 whitespace-nowrap">
+                    <span className="text-[13px] text-ink-subtle">from</span>
+                    <span className="font-display text-[1.7rem] leading-none tracking-[-0.02em] text-ink" style={{ fontWeight: 700 }}>
+                      {rand(tier.price)}
+                    </span>
+                    <span className="text-[13.5px] text-ink-subtle">/month</span>
+                  </p>
+                </div>
+                <p className="mt-2 text-[14.5px] text-ink-muted">{tier.tagline}</p>
+                <ul className="mt-6 space-y-3 border-t border-line pt-5">
+                  {tier.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-[14.5px] leading-relaxed text-ink-muted">
+                      <CheckIcon size={15} weight="bold" aria-hidden="true" className="mt-1 shrink-0 text-accent-soft" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
               </li>
             ))}
           </ul>

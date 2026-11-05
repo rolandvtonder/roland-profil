@@ -354,17 +354,42 @@ export const packages: Package[] = [
   },
 ]
 
-export const carePlan = {
-  name: 'Care plan',
-  price: 350,
-  tagline: 'Optional, and you can stop any time.',
-  includes: [
-    'Hosting and your domain renewed',
-    'Backups and security updates',
-    'Small content changes whenever you need them',
-    'Priority on anything urgent',
-  ],
+export type CareTier = {
+  name: string
+  price: number
+  tagline: string
+  includes: string[]
+  /** The tier most clients should end up on. */
+  recommended?: boolean
 }
+
+// Two tiers on purpose: Essentials is near-zero effort, Complete is the one
+// that costs real time, so the clients who message every week pay for it.
+export const carePlans: CareTier[] = [
+  {
+    name: 'Essentials',
+    price: 450,
+    tagline: 'Keeps the site up, safe and backed up.',
+    includes: [
+      'Hosting and domain renewal handled',
+      'Weekly backups you can roll back to',
+      'Security and software updates',
+      'Uptime monitoring, so I know before you do',
+    ],
+  },
+  {
+    name: 'Complete',
+    price: 950,
+    tagline: 'All of that, plus my time when you need it.',
+    recommended: true,
+    includes: [
+      'Everything in Essentials',
+      'Content changes whenever you need them',
+      'New pages, photos and prices kept current',
+      'Priority on anything urgent',
+    ],
+  },
+]
 
 // Shown under the packages, because it applies to all of them.
 export const pricingNote =
