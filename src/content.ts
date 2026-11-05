@@ -41,7 +41,7 @@ export const site = {
 export const whatsappUrl = `https://wa.me/${site.whatsapp.number}?text=${encodeURIComponent(site.whatsapp.message)}`
 
 // The main call to action, used in the navbar, hero and throughout the page.
-export const previewCta = { label: 'Get a Free Preview', href: '/#contact' }
+export const previewCta = { label: 'Get a Free Preview', href: '/contact/' }
 
 // Add a full URL to show a profile in the Contact section and footer.
 export const socials: { label: 'LinkedIn' | 'Instagram' | 'GitHub'; href: string }[] = [
@@ -52,18 +52,18 @@ export const socials: { label: 'LinkedIn' | 'Instagram' | 'GitHub'; href: string
 
 // Root-absolute so they also work from /services/... and /work/... pages
 export const navLinks = [
-  { label: 'Work', href: '/#work' },
-  { label: 'How it works', href: '/#process' },
-  { label: 'Services', href: '/#services' },
-  { label: 'About', href: '/#about' },
-  { label: 'FAQ', href: '/#faq' },
+  { label: 'Work', href: '/work/' },
+  { label: 'How it works', href: '/how-it-works/' },
+  { label: 'Services', href: '/services/' },
+  { label: 'About', href: '/about/' },
+  { label: 'FAQ', href: '/faq/' },
 ]
 
 export const hero = {
   badge: 'Available for new projects',
   title: 'Websites That Bring You',
   titleAccent: 'More Calls & Enquiries',
-  primaryCta: { label: 'Get a free homepage preview', href: '/#contact' },
+  primaryCta: { label: 'Get a free homepage preview', href: '/#contact' }, // stays an anchor: the form is on the homepage too
   blurb:
     'I design and build fast, modern websites for growing businesses, and I’ll design your homepage first so you can see your new site before you spend a cent.',
 }

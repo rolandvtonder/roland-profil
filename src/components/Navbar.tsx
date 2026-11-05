@@ -9,7 +9,7 @@ import { useScrolled } from '../hooks/useScrolled'
 import { easeOutSoft } from '../lib/motion'
 
 const sectionIds = ['top', 'work', 'process', 'services', 'about', 'faq', 'contact'] as const
-const menuLinks = [...navLinks, { label: 'Contact', href: '/#contact' }]
+const menuLinks = [...navLinks, { label: 'Contact', href: '/contact/' }]
 
 type NavbarProps = {
   menuOpen: boolean
@@ -60,6 +60,8 @@ export default function Navbar({ menuOpen, onMenuOpenChange }: NavbarProps) {
   }, [onMenuOpenChange])
 
   const solid = scrolled || menuOpen
+  // Section highlighting works off the scroll position at home, the path elsewhere
+  const onHomepage = typeof window !== 'undefined' && window.location.pathname === '/'
 
   return (
     <>
@@ -86,7 +88,7 @@ export default function Navbar({ menuOpen, onMenuOpenChange }: NavbarProps) {
           {/* Center links */}
           <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-[34px] lg:flex">
             {navLinks.map((link) => {
-              const isActive = active === link.href.replace(/^\/?#/, '')
+              const isActive = onHomepage ? active === link.href.replace(/^\/?#/, '') : window.location.pathname.startsWith(link.href)
               return (
                 <li key={link.href}>
                   <a

@@ -84,7 +84,8 @@ function FieldShell({ id, label, required, error, hint, children }: FieldShellPr
   )
 }
 
-export default function Contact() {
+/** `heading={false}` hides the section heading, for pages that supply their own. */
+export default function Contact({ heading = true }: { heading?: boolean } = {}) {
   const [values, setValues] = useState<Values>(emptyValues)
   const [touched, setTouched] = useState<Partial<Record<Field, boolean>>>({})
   const [attempted, setAttempted] = useState(false)
@@ -181,7 +182,7 @@ export default function Contact() {
   const showPanel = status === 'sent' || status === 'mailto'
 
   return (
-    <section id="contact" aria-labelledby="contact-title" className="relative overflow-hidden px-gutter py-28 md:py-36">
+    <section id="contact" aria-labelledby={heading ? 'contact-title' : undefined} className="relative overflow-hidden px-gutter py-28 md:py-36">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute -right-40 bottom-0 h-[720px] w-[720px] rounded-full"
@@ -189,9 +190,11 @@ export default function Contact() {
       />
       <div className="relative grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div>
-          <SectionHeading layout="stack" id="contact-title" index="06" label="Contact" title="Get your free preview." subtitle="See your new site before you pay.">
-            Tell me a little about your business and I’ll design your new homepage for free, with no obligation. If you love it, we’ll build the rest together.
-          </SectionHeading>
+          {heading && (
+            <SectionHeading layout="stack" id="contact-title" index="06" label="Contact" title="Get your free preview." subtitle="See your new site before you pay.">
+              Tell me a little about your business and I’ll design your new homepage for free, with no obligation. If you love it, we’ll build the rest together.
+            </SectionHeading>
+          )}
 
           <Reveal delay={0.15}>
             <ul className="mt-10 space-y-5">

@@ -50,16 +50,19 @@ function Portrait() {
   )
 }
 
-export default function About() {
+/** `heading={false}` hides the section heading, for pages that supply their own. */
+export default function About({ heading = true }: { heading?: boolean } = {}) {
   return (
-    <section id="about" aria-labelledby="about-title" className="relative px-gutter py-28 md:py-36">
+    <section id="about" aria-labelledby={heading ? 'about-title' : undefined} className="relative px-gutter py-28 md:py-36">
       <div className="grid items-center gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,6fr)] lg:gap-20">
         <Reveal className="mx-auto w-full max-w-[500px] lg:mx-0">
           <Portrait />
         </Reveal>
 
         <div>
-          <SectionHeading layout="stack" id="about-title" index="04" label="About" title={about.title} subtitle={about.subtitle} />
+          {heading && (
+            <SectionHeading layout="stack" id="about-title" index="04" label="About" title={about.title} subtitle={about.subtitle} />
+          )}
           <Reveal delay={0.1} className="mt-8 max-w-[62ch] space-y-5 text-[17px] leading-relaxed text-ink-muted">
             {about.paragraphs.map((paragraph) => (
               <p key={paragraph}>{paragraph}</p>

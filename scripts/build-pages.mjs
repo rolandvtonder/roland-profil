@@ -6,7 +6,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { servicePages, caseStudies } from '../src/pages.ts'
+import { servicePages, caseStudies, sectionPages } from '../src/pages.ts'
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
 const SITE = 'https://rolandwebdesign.co.za'
@@ -97,6 +97,28 @@ async function write(file, contents) {
   written.push(path.relative(root, file).replace(/\\/g, '/'))
 }
 
+// ── Section pages (the homepage's sections, each on its own URL) ─────────
+for (const page of sectionPages) {
+  const route = `/${page.slug}/`
+  const entry = `section-${page.slug}`
+  await write(
+    path.join(root, page.slug, 'index.html'),
+    html({
+      route,
+      title: page.title,
+      description: page.description,
+      entry,
+      schemas: [
+        breadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: page.eyebrow, url: route },
+        ]),
+      ],
+    }),
+  )
+  await write(path.join(root, 'src', 'entries', `${entry}.tsx`), entryTsx('SectionPageView', page.slug))
+}
+
 // ── Service pages ────────────────────────────────────────────────────────
 for (const page of servicePages) {
   const route = `/services/${page.slug}/`
@@ -172,6 +194,7 @@ for (const study of caseStudies) {
 const today = new Date().toISOString().slice(0, 10)
 const urls = [
   { loc: `${SITE}/`, priority: '1.0', changefreq: 'monthly' },
+  ...sectionPages.map((p) => ({ loc: `${SITE}/${p.slug}/`, priority: '0.9', changefreq: 'monthly' })),
   ...servicePages.map((p) => ({ loc: `${SITE}/services/${p.slug}/`, priority: '0.8', changefreq: 'monthly' })),
   ...caseStudies.map((c) => ({ loc: `${SITE}/work/${c.slug}/`, priority: '0.7', changefreq: 'yearly' })),
 ]

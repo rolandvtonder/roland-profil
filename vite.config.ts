@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
-import { servicePages, caseStudies } from './src/pages'
+import { servicePages, caseStudies, sectionPages } from './src/pages'
 
 const page = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 
@@ -10,6 +10,7 @@ const page = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 // title, description and structured data rather than relying on JavaScript.
 const input = {
   main: page('index.html'),
+  ...Object.fromEntries(sectionPages.map((s) => [`section-${s.slug}`, page(`${s.slug}/index.html`)])),
   ...Object.fromEntries(servicePages.map((s) => [`service-${s.slug}`, page(`services/${s.slug}/index.html`)])),
   ...Object.fromEntries(caseStudies.map((c) => [`work-${c.slug}`, page(`work/${c.slug}/index.html`)])),
 }

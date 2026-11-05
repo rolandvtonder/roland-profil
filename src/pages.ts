@@ -289,6 +289,88 @@ export const servicePages: ServicePage[] = [
   },
 ]
 
+// ── Section pages ────────────────────────────────────────────────────────
+// The homepage keeps a shortened version of each of these; the full version
+// lives on its own URL so it can rank for its own terms.
+export type SectionPage = {
+  slug: string
+  title: string
+  description: string
+  eyebrow: string
+  heading: string
+  headingAccent: string
+  intro: string
+}
+
+export const sectionPages: SectionPage[] = [
+  {
+    slug: 'work',
+    title: 'Web Design Portfolio | Roland Web Design',
+    description:
+      'Websites I have designed and built: crane hire, safari travel, Cape Town tours, plumbing, electrical and event hire, for clients in South Africa and internationally.',
+    eyebrow: 'Portfolio',
+    heading: 'Every site',
+    headingAccent: 'I have designed and built.',
+    intro:
+      'Three paying clients on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
+  },
+  {
+    slug: 'how-it-works',
+    title: 'How It Works | Free Homepage Preview First',
+    description:
+      'How a website project runs with me: a free homepage design first, then build, launch and ongoing support. See your new site before you spend a cent.',
+    eyebrow: 'Process',
+    heading: 'How a project runs,',
+    headingAccent: 'from first chat to live.',
+    intro:
+      'The same four steps every time, and the first one costs you nothing. You see a real design of your homepage before any money changes hands, so the decision is made on something you can look at rather than a promise.',
+  },
+  {
+    slug: 'services',
+    title: 'Web Design & Development Services | Roland Web Design',
+    description:
+      'Web design and development, mobile apps, custom software, e-commerce, SEO and ongoing care for growing businesses in South Africa and internationally.',
+    eyebrow: 'Services',
+    heading: 'Everything I do,',
+    headingAccent: 'and who it suits.',
+    intro:
+      'From a single landing page to an online store, a mobile app or software built to order. Each service has its own page explaining what is included, how it runs and what it costs you in time.',
+  },
+  {
+    slug: 'about',
+    title: 'About Roland | Web Designer in Johannesburg',
+    description:
+      'I am Roland, a web designer and developer in Alberton, Johannesburg, working with clients across South Africa, the United States and beyond.',
+    eyebrow: 'About',
+    heading: 'Hi, I am Roland.',
+    headingAccent: 'You deal with me directly.',
+    intro:
+      'No account manager, no team you never meet, no handover to someone else once the contract is signed. The person who designs your site is the person who builds it and the person who answers when you need something changed.',
+  },
+  {
+    slug: 'faq',
+    title: 'Website Design FAQ | Costs, Timing and Hosting',
+    description:
+      'Common questions about website design: what it costs, how long it takes, who owns the domain and hosting, and how the free homepage preview works.',
+    eyebrow: 'FAQ',
+    heading: 'The questions',
+    headingAccent: 'I get asked most.',
+    intro:
+      'Cost, timing, hosting, who owns what, and how the free preview actually works. If yours is not here, send me a WhatsApp and I will answer it properly.',
+  },
+  {
+    slug: 'contact',
+    title: 'Get a Free Homepage Preview | Contact Roland Web Design',
+    description:
+      'Tell me about your business and I will design your new homepage for free, with no obligation. Email, WhatsApp or the form, whichever suits you.',
+    eyebrow: 'Contact',
+    heading: 'Get your free preview.',
+    headingAccent: 'See it before you pay.',
+    intro:
+      'Tell me a little about your business and I will design your new homepage for free. If you love it, we build the rest together. If you do not, you have lost nothing and owe me nothing.',
+  },
+]
+
 // ── Case studies ─────────────────────────────────────────────────────────
 // One page per client project. These are the pages with a real chance of
 // ranking for niche searches like "crane hire website".

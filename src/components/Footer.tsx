@@ -4,7 +4,7 @@ import PillLink from './PillLink'
 import { navLinks, previewCta, services, site, socials, whatsappUrl } from '../content'
 
 const year = new Date().getFullYear()
-const footerLinks = [...navLinks, { label: 'Contact', href: '/#contact' }]
+const footerLinks = [...navLinks, { label: 'Contact', href: '/contact/' }]
 const activeSocials = socials.filter((social) => social.href)
 // Only the services that have a page of their own
 const servicePageLinks = services.filter((s) => s.slug)

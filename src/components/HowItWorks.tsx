@@ -5,18 +5,21 @@ import SectionHeading from './SectionHeading'
 import { previewCta, processSteps } from '../content'
 import { easeOutSoft, revealViewport } from '../lib/motion'
 
-export default function HowItWorks() {
+/** `heading={false}` hides the section heading, for pages that supply their own. */
+export default function HowItWorks({ heading = true }: { heading?: boolean } = {}) {
   return (
-    <section id="process" aria-labelledby="process-title" className="relative overflow-hidden px-gutter py-28 md:py-36">
+    <section id="process" aria-labelledby={heading ? 'process-title' : undefined} className="relative overflow-hidden px-gutter py-28 md:py-36">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-1/2 left-1/2 h-[640px] w-[1000px] -translate-x-1/2 -translate-y-1/2"
         style={{ background: 'radial-gradient(closest-side, rgba(61,126,255,0.09), transparent)' }}
       />
       <div className="relative">
-        <SectionHeading id="process-title" index="02" label="How it works" title="How it works." subtitle="From free preview to live website.">
-          No big upfront payment and no guesswork. You see your new homepage first, then decide.
-        </SectionHeading>
+        {heading && (
+          <SectionHeading id="process-title" index="02" label="How it works" title="How it works." subtitle="From free preview to live website.">
+            No big upfront payment and no guesswork. You see your new homepage first, then decide.
+          </SectionHeading>
+        )}
 
         <ol className="relative mt-16 grid gap-5 sm:grid-cols-2 lg:mt-20 lg:grid-cols-4">
           {/* Connecting line behind the step numbers on large screens */}

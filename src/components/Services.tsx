@@ -6,9 +6,10 @@ import SectionHeading from './SectionHeading'
 import { previewCta, services } from '../content'
 import { easeOutSoft, revealViewport } from '../lib/motion'
 
-export default function Services() {
+/** `heading={false}` hides the section heading, for pages that supply their own. */
+export default function Services({ heading = true }: { heading?: boolean } = {}) {
   return (
-    <section id="services" aria-labelledby="services-title" className="relative overflow-hidden px-gutter py-28 md:py-36">
+    <section id="services" aria-labelledby={heading ? 'services-title' : undefined} className="relative overflow-hidden px-gutter py-28 md:py-36">
       <div
         aria-hidden="true"
         className="pointer-events-none absolute top-0 -left-60 h-[720px] w-[720px] rounded-full"
@@ -16,9 +17,11 @@ export default function Services() {
       />
       <div className="relative grid gap-14 lg:grid-cols-[minmax(0,5fr)_minmax(0,7fr)] lg:gap-20">
         <div className="lg:sticky lg:top-32 lg:self-start">
-          <SectionHeading layout="stack" id="services-title" index="03" label="Services" title="What I do." subtitle="Design, build and launch, all handled.">
-            From a single landing page to a full online store, a mobile app or software built to order, I take care of design, build and launch, so you can get back to running your business.
-          </SectionHeading>
+          {heading && (
+            <SectionHeading layout="stack" id="services-title" index="03" label="Services" title="What I do." subtitle="Design, build and launch, all handled.">
+              From a single landing page to a full online store, a mobile app or software built to order, I take care of design, build and launch, so you can get back to running your business.
+            </SectionHeading>
+          )}
           <Reveal delay={0.15} className="mt-10">
             <PillLink href={previewCta.href}>{previewCta.label}</PillLink>
           </Reveal>
