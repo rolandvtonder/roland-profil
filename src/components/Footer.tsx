@@ -2,6 +2,7 @@ import { ArrowUpIcon } from '@phosphor-icons/react'
 import LogoMark from './LogoMark'
 import PillLink from './PillLink'
 import { navLinks, previewCta, services, site, socials, whatsappUrl } from '../content'
+import { industryPages } from '../pages'
 
 const year = new Date().getFullYear()
 const footerLinks = [...navLinks, { label: 'Contact', href: '/contact/' }]
@@ -12,7 +13,7 @@ const servicePageLinks = services.filter((s) => s.slug)
 export default function Footer() {
   return (
     <footer className="relative overflow-hidden border-t border-line px-gutter pt-20">
-      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.6fr)_minmax(0,1fr)_minmax(0,1fr)_minmax(0,1fr)]">
+      <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_repeat(4,minmax(0,1fr))]">
         <div>
           <a href="#top" className="inline-flex items-center gap-2.5 rounded-md no-underline" aria-label={`${site.name}, back to top`}>
             <LogoMark size={26} />
@@ -33,6 +34,19 @@ export default function Footer() {
               <li key={service.slug}>
                 <a href={`/services/${service.slug}/`} className="inline-block py-1.5 text-[15px] text-ink-muted no-underline transition-colors hover:text-ink">
                   {service.title}
+                </a>
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <nav aria-label="Industries">
+          <h2 className="text-sm text-ink-subtle">Industries</h2>
+          <ul className="mt-4 space-y-1">
+            {industryPages.map((industry) => (
+              <li key={industry.slug}>
+                <a href={`/industries/${industry.slug}/`} className="inline-block py-1.5 text-[15px] text-ink-muted no-underline transition-colors hover:text-ink">
+                  {industry.headingAccent.replace(/\.$/, '')}
                 </a>
               </li>
             ))}

@@ -4,6 +4,7 @@ import PillLink from './PillLink'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
 import { previewCta, services } from '../content'
+import { industryPages } from '../pages'
 import { easeOutSoft, revealViewport } from '../lib/motion'
 
 /** `heading={false}` hides the section heading, for pages that supply their own. */
@@ -77,6 +78,23 @@ export default function Services({ heading = true }: { heading?: boolean } = {})
           ))}
         </ul>
       </div>
+
+      {/* Industry pages: the homepage stays general, these do the narrow targeting */}
+      <Reveal className="relative mt-20 border-t border-line pt-10">
+        <p className="text-[12.5px] tracking-[0.1em] text-ink-subtle uppercase">Who I build for</p>
+        <ul className="mt-5 flex flex-wrap gap-3">
+          {industryPages.map((industry) => (
+            <li key={industry.slug}>
+              <a
+                href={`/industries/${industry.slug}/`}
+                className="inline-flex items-center gap-1.5 rounded-full border border-line px-4 py-2 text-[14.5px] text-ink-muted no-underline transition-colors duration-200 hover:border-accent/40 hover:text-ink"
+              >
+                {industry.headingAccent.replace(/\.$/, '')}
+              </a>
+            </li>
+          ))}
+        </ul>
+      </Reveal>
     </section>
   )
 }

@@ -11,7 +11,17 @@
 export type FaqItem = { question: string; answer: string }
 
 /** Icon names resolved to components in ServicePageView. */
-export type ServiceIcon = 'penNib' | 'code' | 'deviceMobile' | 'stack' | 'shoppingBag' | 'chartLineUp'
+export type ServiceIcon =
+  | 'penNib'
+  | 'code'
+  | 'deviceMobile'
+  | 'stack'
+  | 'shoppingBag'
+  | 'chartLineUp'
+  | 'calendar'
+  | 'airplane'
+  | 'wrench'
+  | 'truck'
 
 export type ServicePage = {
   slug: string
@@ -286,6 +296,181 @@ export const servicePages: ServicePage[] = [
       { question: 'What is a Google Business Profile?', answer: 'The listing that shows your business on Google Maps and in local results, with your hours, photos and reviews. For a local business it is often worth more than the website itself, and it is free.' },
     ],
     relatedProjects: ['Flexi Tours', 'Drip Dry Plumbing'],
+  },
+]
+
+// ── Industry pages ───────────────────────────────────────────────────────
+// The homepage stays general on purpose. These pages do the narrow targeting:
+// nobody searches "web designer for growing businesses", they search "website
+// for event planners". Same shape as a service page, different angle.
+export const industryPages: ServicePage[] = [
+  {
+    slug: 'event-planners',
+    icon: 'calendar',
+    title: 'Website Design for Event Planners | Roland Web Design',
+    description:
+      'Websites for event planners, venues and hire companies: galleries that sell, date-aware enquiry forms and fast quoting. Free homepage design first.',
+    heading: 'Websites for',
+    headingAccent: 'event planners.',
+    intro:
+      'Events are booked on two things: whether the last one looked good, and whether you replied before the next company did. Everything else on an event website is decoration. I build sites that get those two right first.',
+    problem: {
+      title: 'Most event websites bury the only thing that sells',
+      body: 'The photographs. A planner, a venue or a hire company is selling an experience that has not happened yet, so the only proof available is what the last one looked like. Yet most event sites open with a paragraph about the company and hide the gallery three clicks in. Meanwhile the enquiry form asks for a message but never asks for the date, which is the one thing that decides whether you can take the job.',
+    },
+    includes: [
+      { title: 'A gallery that loads fast', text: 'Real events, properly compressed. Hundreds of photographs that still open quickly on a phone at a venue viewing.' },
+      { title: 'Date-first enquiries', text: 'The form asks the date, the headcount and the venue before anything else, so your first reply can be useful instead of a question.' },
+      { title: 'Packages people can understand', text: 'Options priced as bundles rather than a parts list, because most clients are planning their first event and do not know what they need.' },
+      { title: 'Indicative pricing', text: 'Even a from-price. Hiding it loses the people who were comparing, and comparing is what they are all doing.' },
+      { title: 'WhatsApp quoting', text: 'Event quotes go back and forth about dates and numbers. A chat suits that; an email chain does not.' },
+      { title: 'Built for Instagram traffic', text: 'Most event enquiries arrive from a phone, from a social link. The site is designed for that visitor first.' },
+    ],
+    process: [
+      { step: '01', title: 'Free homepage preview', text: 'Send me a few photographs from your best event and I will design your new homepage around them, free.' },
+      { step: '02', title: 'Shape the packages', text: 'We work out how your offering is best presented, as packages, as hire items, or both.' },
+      { step: '03', title: 'Build', text: 'Gallery, enquiry flow, pricing and the pages that answer the questions you are tired of answering.' },
+      { step: '04', title: 'Launch', text: 'Live on your domain, ready for Google, and set up so you can add new event photos yourself.' },
+    ],
+    goodFor: [
+      'Event and wedding planners',
+      'Venues taking bookings and viewings',
+      'Tent, furniture and decor hire companies',
+      'Catering, sound and lighting suppliers',
+    ],
+    faqs: [
+      { question: 'Do you build websites for event planners?', answer: 'Yes. Event businesses have a specific need: a gallery that carries the sale, pricing people can act on, and an enquiry that captures the date before anything else. The Flexi Hire concept in my portfolio is built around exactly that.' },
+      { question: 'Can the website show my availability?', answer: 'It can, though for most event businesses a date-first enquiry works better than a live calendar, because availability usually depends on the size of the job as well as the date.' },
+      { question: 'I have hundreds of event photos. Will that slow the site down?', answer: 'Not if they are handled properly. Images get compressed and loaded only as someone scrolls to them, so a large gallery still opens fast on a phone.' },
+      { question: 'Should I show prices for events?', answer: 'A starting price, yes. Event clients are comparing several suppliers at once, and the ones who hide pricing get skipped by people who had the budget anyway.' },
+    ],
+    relatedProjects: ['Flexi Hire', 'LIFTR Co'],
+  },
+  {
+    slug: 'travel-and-tourism',
+    icon: 'airplane',
+    title: 'Website Design for Travel & Tour Operators | Roland Web Design',
+    description:
+      'Websites for tour operators, travel agencies and safari companies: browsable tours, clear pricing and enquiries that turn into bookings.',
+    heading: 'Websites for',
+    headingAccent: 'travel and tour operators.',
+    intro:
+      'A traveller planning a trip has six tabs open and is deciding on price, what is included, and whether your company looks like it will actually turn up at the hotel. The site that answers all three fastest gets the enquiry.',
+    problem: {
+      title: 'Travel sites lose bookings to the tab next door',
+      body: 'Not to a better tour, usually. To a clearer page. The itinerary that does not say how many nights, the price hidden behind an enquiry form, the gallery that takes eight seconds to load on hotel wifi. Every one of those sends a traveller back to the comparison they were running, and they rarely come back.',
+    },
+    includes: [
+      { title: 'A browsable tour catalogue', text: 'Days, nights, countries and a from-price on every card, so a traveller can compare without opening ten pages.' },
+      { title: 'Pricing in the right currency', text: 'Quote inbound travellers in their currency and locals in rand. Asking someone to convert is asking them to leave.' },
+      { title: 'Full itineraries', text: 'Day by day, with what is and is not included. This is what gets forwarded to the person paying.' },
+      { title: 'Travel guides that bring traffic', text: 'People search destinations months before they search operators. Guides catch them early and introduce the tours.' },
+      { title: 'WhatsApp enquiries', text: 'International and local travellers both reach for it. One tap from any tour.' },
+      { title: 'Transfers and extras priced openly', text: 'Airport transfers and add-ons stated rather than hidden, because the companies that hide them lose to the ones that do not.' },
+    ],
+    process: [
+      { step: '01', title: 'Free homepage preview', text: 'Tell me about your tours and I will design your new homepage for free, built around your best destination photography.' },
+      { step: '02', title: 'Structure the catalogue', text: 'How tours are grouped, what a traveller sees first, and how packages and transfers fit together.' },
+      { step: '03', title: 'Build', text: 'Tours, itineraries, guides and the enquiry flow, tested on a phone throughout.' },
+      { step: '04', title: 'Launch', text: 'Live, search-ready, with the guides set up to keep bringing traffic.' },
+    ],
+    goodFor: [
+      'Tour operators and day-tour companies',
+      'Safari operators and lodges',
+      'Travel agencies, leisure and corporate',
+      'Transfer and shuttle services',
+    ],
+    faqs: [
+      { question: 'Do you build websites for tour operators?', answer: 'It is the sector I have done the most work in. Flexi Tours and Flexi Travel & Safari are both live client sites, and there are three travel agency concept redesigns in my portfolio.' },
+      { question: 'Can you handle two currencies or two markets?', answer: 'Yes. Flexi Travel & Safari sells safaris into Europe in euros and European trips into Southern Africa in rand, from one site, with each market seeing its own pricing.' },
+      { question: 'Should tours show prices online?', answer: 'A from-price, yes. Travellers are comparing across tabs, and a page with no price is the easiest one to close.' },
+      { question: 'Can you add online booking and payment?', answer: 'Yes, though whether you need full booking or a WhatsApp enquiry depends on how you handle availability. We work that out before building.' },
+    ],
+    relatedProjects: ['Flexi Travel & Safari', 'Flexi Tours'],
+  },
+  {
+    slug: 'trades-and-services',
+    icon: 'wrench',
+    title: 'Website Design for Plumbers, Electricians & Trades | Roland Web Design',
+    description:
+      'Websites for plumbers, electricians and trades: always-visible phone numbers, service areas, real finished work and quote forms that get used.',
+    heading: 'Websites for',
+    headingAccent: 'trades and services.',
+    intro:
+      'Nobody browses for a plumber. They search when something has gone wrong, they pick from the first few results, and they call. A trade website has one job: be the one they call.',
+    problem: {
+      title: 'Trade websites are judged in under a minute',
+      body: 'The customer is stressed, on a phone, and comparing three companies. They are not reading your history. They want to know you cover their area, that you can come out when they need you, and that the last person who called you was glad they did. Anything that makes them scroll to find your number is a reason to go back to the search results.',
+    },
+    includes: [
+      { title: 'A number that follows the page', text: 'On a phone the call button stays on screen. The gap between deciding and dialling should be zero.' },
+      { title: 'Hours and call-outs stated up top', text: 'Whether you answer at night is the single most important fact about an emergency trade.' },
+      { title: 'Services in customer language', text: 'Burst pipes and blocked drains, not trade terminology. The words people actually type.' },
+      { title: 'Real finished work', text: 'Photographs of your own jobs. In a trade nobody can assess, showing the standard is the whole argument.' },
+      { title: 'Service areas spelled out', text: 'Which suburbs you cover, so you stop fielding calls from the wrong side of town.' },
+      { title: 'A quote form with photo upload', text: 'For planned work. A picture of the problem saves two phone calls.' },
+    ],
+    process: [
+      { step: '01', title: 'Free homepage preview', text: 'Tell me what you do and where, and I will design your homepage free, built around getting the phone to ring.' },
+      { step: '02', title: 'Gather the proof', text: 'Your finished jobs, your reviews, your certifications. These do the convincing.' },
+      { step: '03', title: 'Build', text: 'Services, areas, FAQs and the call and quote routes, tested on a phone first.' },
+      { step: '04', title: 'Launch', text: 'Live, and set up on Google so people searching your area can find you.' },
+    ],
+    goodFor: [
+      'Plumbers, electricians and handymen',
+      'Emergency and 24-hour call-out businesses',
+      'Builders, roofers and renovators',
+      'Anyone whose work arrives by phone',
+    ],
+    faqs: [
+      { question: 'Do you build websites for plumbers and electricians?', answer: 'Yes. There are two trade concepts in my portfolio, Drip Dry Plumbing and JPM Plumbing & Electrical, both built around turning a search into a phone call as fast as possible.' },
+      { question: 'What should a trade website have on it?', answer: 'A phone number that is always visible, your hours and whether you do call-outs, the areas you cover, your services in plain words, and reviews. Everything else is secondary.' },
+      { question: 'Do I need a quote form if people just phone?', answer: 'For emergencies, no. For planned work like a rewire or a geyser replacement, a short form with a photo upload gets you better enquiries and fewer wasted calls.' },
+      { question: 'Will it help me show up on Google Maps?', answer: 'The site helps, but the bigger lever is a Google Business Profile with real reviews. I will set that up and show you how to ask customers for reviews properly.' },
+    ],
+    relatedProjects: ['Drip Dry Plumbing', 'JPM Plumbing & Electrical'],
+  },
+  {
+    slug: 'hire-and-equipment',
+    icon: 'truck',
+    title: 'Website Design for Hire & Equipment Companies | Roland Web Design',
+    description:
+      'Websites for plant, crane, tent and equipment hire: catalogues with real specifications, proof of past jobs and quoting that works from a site.',
+    heading: 'Websites for',
+    headingAccent: 'hire and equipment.',
+    intro:
+      'Hire is a date business and a spec business. The customer needs to know you have the right machine, that it will fit their site, and how fast they can get a price. The company that answers first usually gets the job.',
+    problem: {
+      title: 'Hire companies lose work to slow quoting',
+      body: 'The customer has a date, a size and a budget, and they are asking four suppliers at once. If your site makes them fill in a long form and wait a day, somebody who replied in ten minutes already has the booking. The website\u2019s job is to shorten that gap, not to describe your company history.',
+    },
+    includes: [
+      { title: 'A catalogue with real specifications', text: 'Capacities, reach, dimensions and weights, stated plainly. Your customers are checking whether it fits.' },
+      { title: 'Proof of past jobs', text: 'Photographs of your equipment on real sites. In hire, having done it before is the entire sales pitch.' },
+      { title: 'Packages as well as items', text: 'Bundles for customers who do not know what they need item by item.' },
+      { title: 'Date-first enquiries', text: 'Asking the date upfront stops you quoting on stock that is already out.' },
+      { title: 'WhatsApp quoting with photos', text: 'The fastest way to quote is a picture of the site. One tap from any page.' },
+      { title: 'Separate sales from hire', text: 'If you sell equipment as well, it gets its own route so neither confuses the other.' },
+    ],
+    process: [
+      { step: '01', title: 'Free homepage preview', text: 'Send me your fleet list and a few job photographs, and I will design your homepage free.' },
+      { step: '02', title: 'Structure the fleet', text: 'How machines are grouped, what specifications matter, and how customers will search them.' },
+      { step: '03', title: 'Build', text: 'Catalogue, galleries, quoting routes and any sales listings.' },
+      { step: '04', title: 'Launch', text: 'Live and search-ready, with a page per machine type so each can be found on its own.' },
+    ],
+    goodFor: [
+      'Plant, crane and access equipment hire',
+      'Tent, furniture and event hire',
+      'Tool and construction equipment hire',
+      'Companies hiring and selling equipment',
+    ],
+    faqs: [
+      { question: 'Do you build websites for hire companies?', answer: 'Yes. LIFTR Co is a live client in nationwide crane and access equipment hire, and Flexi Hire is a tent and event furniture hire concept in my portfolio.' },
+      { question: 'Can the site list every machine we have?', answer: 'Yes, with a page per machine type so that searches like "spider crane hire" land on the page about spider cranes rather than a homepage.' },
+      { question: 'Should we show hire rates online?', answer: 'At least a starting range where you can. Hidden pricing loses the customers who are comparing, and in hire that is most of them.' },
+      { question: 'We hire and we sell. Can one site do both?', answer: 'Yes, and it should, with two clear routes from the homepage. LIFTR Co runs crane hire and plant sales from one site without the two getting tangled.' },
+    ],
+    relatedProjects: ['LIFTR Co', 'Flexi Hire'],
   },
 ]
 

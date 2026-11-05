@@ -2,7 +2,7 @@ import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import { fileURLToPath } from 'node:url'
-import { servicePages, caseStudies, sectionPages } from './src/pages'
+import { servicePages, caseStudies, sectionPages, industryPages } from './src/pages'
 
 const page = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 
@@ -12,6 +12,7 @@ const input = {
   main: page('index.html'),
   ...Object.fromEntries(sectionPages.map((s) => [`section-${s.slug}`, page(`${s.slug}/index.html`)])),
   ...Object.fromEntries(servicePages.map((s) => [`service-${s.slug}`, page(`services/${s.slug}/index.html`)])),
+  ...Object.fromEntries(industryPages.map((s) => [`industry-${s.slug}`, page(`industries/${s.slug}/index.html`)])),
   ...Object.fromEntries(caseStudies.map((c) => [`work-${c.slug}`, page(`work/${c.slug}/index.html`)])),
 }
 

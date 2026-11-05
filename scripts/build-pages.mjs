@@ -6,7 +6,7 @@
 import fs from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { servicePages, caseStudies, sectionPages } from '../src/pages.ts'
+import { servicePages, caseStudies, sectionPages, industryPages } from '../src/pages.ts'
 
 const root = path.dirname(path.dirname(fileURLToPath(import.meta.url)))
 const SITE = 'https://rolandwebdesign.co.za'
@@ -156,6 +156,54 @@ for (const page of servicePages) {
   await write(path.join(root, 'src', 'entries', `${entry}.tsx`), entryTsx('ServicePageView', page.slug))
 }
 
+// ── Industry pages ───────────────────────────────────────────────────────
+for (const page of industryPages) {
+  const route = `/industries/${page.slug}/`
+  const entry = `industry-${page.slug}`
+  await write(
+    path.join(root, 'industries', page.slug, 'index.html'),
+    html({
+      route,
+      title: page.title,
+      description: page.description,
+      entry,
+      schemas: [
+        {
+          '@context': 'https://schema.org',
+          '@type': 'Service',
+          name: `${page.heading} ${page.headingAccent}`.replace(/\.$/, ''),
+          description: page.description,
+          url: `${SITE}${route}`,
+          provider: { '@type': 'ProfessionalService', name: BUSINESS, url: `${SITE}/` },
+          areaServed: [
+            { '@type': 'Country', name: 'South Africa' },
+            { '@type': 'Country', name: 'United States' },
+          ],
+        },
+        breadcrumbSchema([
+          { name: 'Home', url: '/' },
+          { name: page.headingAccent.replace(/\.$/, ''), url: route },
+        ]),
+        faqSchema(page.faqs),
+      ],
+    }),
+  )
+  await write(
+    path.join(root, 'src', 'entries', `${entry}.tsx`),
+    `import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import '../index.css'
+import ServicePageView from '../pages/ServicePageView'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <ServicePageView slug="${page.slug}" kind="industry" />
+  </StrictMode>,
+)
+`,
+  )
+}
+
 // ── Case studies ─────────────────────────────────────────────────────────
 for (const study of caseStudies) {
   const route = `/work/${study.slug}/`
@@ -196,6 +244,7 @@ const urls = [
   { loc: `${SITE}/`, priority: '1.0', changefreq: 'monthly' },
   ...sectionPages.map((p) => ({ loc: `${SITE}/${p.slug}/`, priority: '0.9', changefreq: 'monthly' })),
   ...servicePages.map((p) => ({ loc: `${SITE}/services/${p.slug}/`, priority: '0.8', changefreq: 'monthly' })),
+  ...industryPages.map((p) => ({ loc: `${SITE}/industries/${p.slug}/`, priority: '0.8', changefreq: 'monthly' })),
   ...caseStudies.map((c) => ({ loc: `${SITE}/work/${c.slug}/`, priority: '0.7', changefreq: 'yearly' })),
 ]
 await write(

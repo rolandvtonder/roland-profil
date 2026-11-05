@@ -1,4 +1,6 @@
 import {
+  AirplaneTiltIcon,
+  CalendarCheckIcon,
   ChartLineUpIcon,
   CheckIcon,
   CodeIcon,
@@ -6,6 +8,8 @@ import {
   PenNibIcon,
   ShoppingBagOpenIcon,
   StackIcon,
+  TruckIcon,
+  WrenchIcon,
 } from '@phosphor-icons/react'
 import type { Icon } from '@phosphor-icons/react'
 import PageShell from '../components/PageShell'
@@ -16,7 +20,7 @@ import Reveal from '../components/Reveal'
 import ProjectCard from '../components/ProjectCard'
 import SectionHeading from '../components/SectionHeading'
 import { projects } from '../content'
-import { servicePages } from '../pages'
+import { servicePages, industryPages } from '../pages'
 import type { ServiceIcon } from '../pages'
 
 // pages.ts stays free of React imports, so the icon names are resolved here
@@ -27,11 +31,17 @@ const icons: Record<ServiceIcon, Icon> = {
   stack: StackIcon,
   shoppingBag: ShoppingBagOpenIcon,
   chartLineUp: ChartLineUpIcon,
+  calendar: CalendarCheckIcon,
+  airplane: AirplaneTiltIcon,
+  wrench: WrenchIcon,
+  truck: TruckIcon,
 }
 
-export default function ServicePageView({ slug }: { slug: string }) {
-  const page = servicePages.find((p) => p.slug === slug)
-  if (!page) throw new Error(`No service page for slug "${slug}"`)
+export default function ServicePageView({ slug, kind = 'service' }: { slug: string; kind?: 'service' | 'industry' }) {
+  const list = kind === 'industry' ? industryPages : servicePages
+  const page = list.find((p) => p.slug === slug)
+  if (!page) throw new Error(`No ${kind} page for slug "${slug}"`)
+  const isIndustry = kind === 'industry'
 
   const related = page.relatedProjects
     .map((title) => projects.find((p) => p.title === title))
@@ -40,9 +50,13 @@ export default function ServicePageView({ slug }: { slug: string }) {
   return (
     <PageShell>
       <SubPageHero
-        crumbs={[{ label: 'Home', href: '/' }, { label: 'Services', href: '/#services' }, { label: page.heading.replace(/ that$| built$| shaped$/, '') }]}
+        crumbs={[
+          { label: 'Home', href: '/' },
+          isIndustry ? { label: 'Industries' } : { label: 'Services', href: '/services/' },
+          { label: page.headingAccent.replace(/\.$/, '') },
+        ]}
         icon={icons[page.icon]}
-        eyebrow="Service"
+        eyebrow={isIndustry ? 'Industry' : 'Service'}
         heading={page.heading}
         headingAccent={page.headingAccent}
         intro={page.intro}
