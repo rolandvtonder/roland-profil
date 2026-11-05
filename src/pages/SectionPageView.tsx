@@ -4,6 +4,7 @@ import CtaBand from '../components/CtaBand'
 import Work from '../components/Work'
 import HowItWorks from '../components/HowItWorks'
 import Services from '../components/Services'
+import Pricing from '../components/Pricing'
 import About from '../components/About'
 import Faq from '../components/Faq'
 import Contact from '../components/Contact'
@@ -22,6 +23,7 @@ export default function SectionPageView({ slug }: { slug: string }) {
     work: <Work variant="full" heading={false} />,
     'how-it-works': <HowItWorks heading={false} />,
     services: <Services heading={false} />,
+    pricing: <Pricing heading={false} />,
     about: <About heading={false} />,
     faq: <Faq variant="full" heading={false} />,
     contact: <Contact heading={false} />,

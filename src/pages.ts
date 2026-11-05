@@ -489,6 +489,17 @@ export type SectionPage = {
 
 export const sectionPages: SectionPage[] = [
   {
+    slug: 'pricing',
+    title: 'Website Prices South Africa | Roland Web Design',
+    description:
+      'What a website costs: one-page sites from R3 500, business websites from R7 500, online stores from R15 000. Free homepage design first, fixed quote upfront.',
+    eyebrow: 'Pricing',
+    heading: 'What it costs,',
+    headingAccent: 'before you ask.',
+    intro:
+      'Most web designers make you enquire to find out what they charge. Here are the numbers. Every package starts with a free homepage design, so you see what you are buying before any money changes hands, and you get a fixed quote upfront rather than an open meter.',
+  },
+  {
     slug: 'work',
     title: 'Web Design Portfolio | Roland Web Design',
     description:

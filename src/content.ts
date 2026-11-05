@@ -55,6 +55,7 @@ export const navLinks = [
   { label: 'Work', href: '/work/' },
   { label: 'How it works', href: '/how-it-works/' },
   { label: 'Services', href: '/services/' },
+  { label: 'Pricing', href: '/pricing/' },
   { label: 'About', href: '/about/' },
   { label: 'FAQ', href: '/faq/' },
 ]
@@ -280,6 +281,95 @@ export const services: { icon: Icon; title: string; description: string; tags: s
   },
 ]
 
+// ── Packages ─────────────────────────────────────────────────────────────
+// Change the prices here and they update everywhere on the site.
+// `price: null` means the card shows "Personal quote" instead of a number.
+export type Package = {
+  name: string
+  price: number | null
+  tagline: string
+  includes: string[]
+  /** Flags the middle card as the one most people pick. */
+  popular?: boolean
+  cta: { label: string; href: string }
+}
+
+export const packages: Package[] = [
+  {
+    name: 'Starter',
+    price: 3500,
+    tagline: 'A single page that does its job.',
+    includes: [
+      'One-page website',
+      'Designed around one clear action',
+      'Works on every phone and screen',
+      'Contact form straight to your inbox',
+      'WhatsApp button',
+      'Your domain connected and live',
+    ],
+    cta: { label: 'Start with a free preview', href: '/contact/' },
+  },
+  {
+    name: 'Business',
+    price: 7500,
+    tagline: 'The one most businesses need.',
+    popular: true,
+    includes: [
+      'Up to five pages',
+      'Everything in Starter',
+      'Google Business Profile set up',
+      'Search-ready: titles, sitemap, structured data',
+      'Photo galleries and service pages',
+      'Usually live within two weeks',
+    ],
+    cta: { label: 'Start with a free preview', href: '/contact/' },
+  },
+  {
+    name: 'E-commerce',
+    price: 15000,
+    tagline: 'Sell online properly.',
+    includes: [
+      'Everything in Business',
+      'Product catalogue you can manage',
+      'Secure checkout with no dead ends',
+      'South African payments: PayFast, Yoco, Ozow',
+      'Delivery and collection options',
+      'Built for Google Shopping',
+    ],
+    cta: { label: 'Start with a free preview', href: '/contact/' },
+  },
+  {
+    name: 'Something else',
+    price: null,
+    tagline: 'Priced properly, once I understand it.',
+    includes: [
+      'Mobile apps for iOS and Android',
+      'Custom software and dashboards',
+      'Large or unusual builds',
+      'Redesigns of big existing sites',
+      'Booking and quoting systems',
+      'A fixed quote before any work starts',
+    ],
+    cta: { label: 'Get a personal quote', href: '/contact/' },
+  },
+]
+
+export const carePlan = {
+  name: 'Care plan',
+  price: 350,
+  tagline: 'Optional, and you can stop any time.',
+  includes: [
+    'Hosting and your domain renewed',
+    'Backups and security updates',
+    'Small content changes whenever you need them',
+    'Priority on anything urgent',
+  ],
+}
+
+// Shown under the packages, because it applies to all of them.
+export const pricingNote =
+  'Every package starts with a free homepage design, so you see your new site before you pay anything. Prices are a starting point: you get a fixed quote upfront once I know what you need, and there are no surprises after that.'
+
 // ── About ────────────────────────────────────────────────────────────────
 export const about = {
   title: 'Hi, I’m Roland.',
@@ -304,7 +394,7 @@ export const faqs = [
   {
     question: 'How much does a website cost?',
     answer:
-      'It depends on how many pages and features you need. After your free homepage preview you’ll get a fixed quote upfront, so there are no surprises.',
+      'One-page sites start at R3 500, business websites at R7 500 and online stores at R15 000. Apps and custom software are quoted individually. See the pricing page for what each one includes — and you get a fixed quote upfront after your free homepage preview, so there are no surprises.',
   },
   {
     // PLACEHOLDER: check these timeframes match how fast you work

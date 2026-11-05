@@ -6,6 +6,7 @@ import ClientStrip from './components/ClientStrip'
 import Work from './components/Work'
 import HowItWorks from './components/HowItWorks'
 import Services from './components/Services'
+import Pricing from './components/Pricing'
 import About from './components/About'
 import Faq from './components/Faq'
 import Contact from './components/Contact'
@@ -29,6 +30,7 @@ function App() {
           <Work />
           <HowItWorks />
           <Services />
+          <Pricing />
           <About />
           <Faq />
           <Contact />
