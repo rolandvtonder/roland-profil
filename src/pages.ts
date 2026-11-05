@@ -22,6 +22,7 @@ export type ServiceIcon =
   | 'airplane'
   | 'wrench'
   | 'truck'
+  | 'megaphone'
 
 export type ServicePage = {
   slug: string
@@ -45,6 +46,51 @@ export type ServicePage = {
 }
 
 export const servicePages: ServicePage[] = [
+  {
+    slug: 'meta-ads',
+    icon: 'megaphone',
+    title: 'Facebook & Instagram Ads Management | Roland Web Design',
+    description:
+      'Meta ads done properly for South African businesses: real campaigns instead of boosted posts, tracking that shows what works, and the landing page built to match.',
+    heading: 'Facebook and Instagram ads',
+    headingAccent: 'that are not just boosted posts.',
+    intro:
+      'Most small businesses have tried advertising on Facebook. They pressed Boost on a post that was doing well, spent a few hundred rand, got some likes from people who already follow them, and decided ads do not work. That is not advertising. That is paying Meta to show your post to a slightly bigger version of the same audience.',
+    problem: {
+      title: 'Boosting a post is not running an ad',
+      body: 'The Boost button gives you almost none of the controls that make advertising work: who sees it, what happens when they click, and whether any of it turned into money. A real campaign picks an objective, targets people by what they do rather than who already follows you, sends them somewhere built to convert, and measures the result. Same platform, completely different machine underneath, and the difference is usually the entire return.',
+    },
+    includes: [
+      { title: 'Campaigns built in Ads Manager', text: 'Proper objectives, audiences and placements, not the three options the Boost button offers.' },
+      { title: 'Tracking set up first', text: 'The Meta pixel and conversion events on your site before a cent is spent, so we can see which ads produce enquiries rather than which produce likes.' },
+      { title: 'Audiences worth paying for', text: 'People who visited your site, people who look like your existing customers, and people searching for what you do in your area.' },
+      { title: 'Several versions, not one', text: 'Multiple images and wordings running against each other, with the losers switched off. Most of what works is found, not guessed.' },
+      { title: 'The landing page too', text: 'I build the page the ad points at. An ads agency hands you a click; the page it lands on decides whether it was worth paying for.' },
+      { title: 'A report you can actually read', text: 'What was spent, what came back, and what I am changing next. No dashboard logins, no jargon.' },
+    ],
+    process: [
+      { step: '01', title: 'Work out the numbers', text: 'What a customer is worth to you, and what you can afford to pay to get one. Everything else follows from that.' },
+      { step: '02', title: 'Set up properly', text: 'Business Manager, pixel, conversion events and the landing page, before any budget goes out.' },
+      { step: '03', title: 'Start small and test', text: 'A modest budget across several versions to find what people respond to, rather than betting everything on one guess.' },
+      { step: '04', title: 'Put money behind what works', text: 'Scale the winners, kill the rest, and keep testing. This is the part that never finishes.' },
+    ],
+    goodFor: [
+      'Event planners, venues and hire companies with dates to fill',
+      'Tour operators and travel businesses with a season to hit',
+      'Trades wanting local leads rather than followers',
+      'Online stores with something visual to sell',
+      'Anyone who has been boosting posts and seeing nothing for it',
+    ],
+    faqs: [
+      { question: 'How much should I spend on Facebook ads?', answer: 'Two separate numbers: the ad budget, which goes to Meta, and the management fee, which comes to me. For a small local business a meaningful test budget usually starts around R3 000 to R5 000 a month. Below that there is not enough data to learn from, and you end up paying to guess.' },
+      { question: 'Why not just boost posts myself?', answer: 'You can, and for building a following it is fine. But boosting gives you almost no control over targeting, no proper conversion tracking and no way to test versions against each other. If the goal is enquiries rather than likes, it is the wrong tool.' },
+      { question: 'Do I need a website before running ads?', answer: 'For anything beyond brand awareness, yes. Sending paid traffic to a Facebook page or a weak page is how advertising budgets disappear. If you do not have a site yet, that comes first, and I build those too.' },
+      { question: 'How soon will I see results?', answer: 'The first two to four weeks are mostly learning, which feels slow and is not wasted. Meta needs conversion data before it can find more of the right people. Anyone promising returns in week one is guessing.' },
+      { question: 'Can you do Google Ads as well?', answer: 'Yes, and often it is the better fit. Meta is for demand you create; Google is for demand that already exists. A plumber wants Google, because people search when the pipe bursts. An event venue wants Meta, because nobody searches for a venue they have not imagined yet.' },
+      { question: 'Who owns the ad account?', answer: 'You do. The Business Manager, the pixel data and the audiences stay in your account, so if we stop working together you keep everything that was built.' },
+    ],
+    relatedProjects: [],
+  },
   {
     slug: 'web-design',
     icon: 'penNib',

@@ -10,6 +10,7 @@ import {
   EyeIcon,
   LightningIcon,
   MagicWandIcon,
+  MegaphoneIcon,
   PenNibIcon,
   ShieldCheckIcon,
   ShoppingBagOpenIcon,
@@ -256,6 +257,14 @@ export const services: { icon: Icon; title: string; description: string; tags: s
     description:
       'Online stores that are easy for customers to shop and just as easy for you to manage.',
     tags: ['Product pages', 'Checkout', 'Payments'],
+  },
+  {
+    icon: MegaphoneIcon,
+    title: 'Meta Ads',
+    slug: 'meta-ads',
+    description:
+      'Facebook and Instagram advertising run properly, with tracking that shows what actually brought the enquiry.',
+    tags: ['Campaign setup', 'Pixel tracking', 'Reporting'],
   },
   {
     icon: ChartLineUpIcon,

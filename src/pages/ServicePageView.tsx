@@ -8,6 +8,7 @@ import {
   PenNibIcon,
   ShoppingBagOpenIcon,
   StackIcon,
+  MegaphoneIcon,
   TruckIcon,
   WrenchIcon,
 } from '@phosphor-icons/react'
@@ -35,6 +36,7 @@ const icons: Record<ServiceIcon, Icon> = {
   airplane: AirplaneTiltIcon,
   wrench: WrenchIcon,
   truck: TruckIcon,
+  megaphone: MegaphoneIcon,
 }
 
 export default function ServicePageView({ slug, kind = 'service' }: { slug: string; kind?: 'service' | 'industry' }) {
@@ -53,7 +55,8 @@ export default function ServicePageView({ slug, kind = 'service' }: { slug: stri
         crumbs={[
           { label: 'Home', href: '/' },
           isIndustry ? { label: 'Industries' } : { label: 'Services', href: '/services/' },
-          { label: page.headingAccent.replace(/\.$/, '') },
+          // The title's first half is the page's short name; the headline is a sentence fragment
+          { label: page.title.split('|')[0].trim() },
         ]}
         icon={icons[page.icon]}
         eyebrow={isIndustry ? 'Industry' : 'Service'}
