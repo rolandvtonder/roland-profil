@@ -40,7 +40,7 @@ function breadcrumbSchema(trail) {
   }
 }
 
-function html({ route, title, description, entry, schemas }) {
+function html({ route, title, description, entry, schemas, noindex }) {
   const url = `${SITE}${route}`
   return `<!doctype html>
 <html lang="en">
@@ -52,6 +52,7 @@ function html({ route, title, description, entry, schemas }) {
     <title>${esc(title)}</title>
     <meta name="description" content="${esc(description)}" />
     <link rel="canonical" href="${url}" />
+${noindex ? '    <meta name="robots" content="noindex, nofollow" />\n' : ''}
     <meta property="og:title" content="${esc(title)}" />
     <meta property="og:description" content="${esc(description)}" />
     <meta property="og:site_name" content="${BUSINESS}" />
@@ -237,6 +238,35 @@ for (const study of caseStudies) {
   )
   await write(path.join(root, 'src', 'entries', `${entry}.tsx`), entryTsx('CaseStudyView', study.slug))
 }
+
+// ── Testimonial page ─────────────────────────────────────────────────────
+// One link Roland sends to a client; deliberately kept out of search and
+// out of the sitemap.
+await write(
+  path.join(root, 'testimonial', 'index.html'),
+  html({
+    route: '/testimonial/',
+    title: 'Leave a testimonial | Roland Web Design',
+    description: 'A short form for clients to say a few words about working with Roland Web Design.',
+    entry: 'testimonial',
+    noindex: true,
+    schemas: [],
+  }),
+)
+await write(
+  path.join(root, 'src', 'entries', 'testimonial.tsx'),
+  `import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import '../index.css'
+import TestimonialPage from '../pages/TestimonialPage'
+
+createRoot(document.getElementById('root')!).render(
+  <StrictMode>
+    <TestimonialPage />
+  </StrictMode>,
+)
+`,
+)
 
 // ── Sitemap ──────────────────────────────────────────────────────────────
 const today = new Date().toISOString().slice(0, 10)

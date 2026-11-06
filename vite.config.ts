@@ -10,6 +10,7 @@ const page = (p: string) => fileURLToPath(new URL(p, import.meta.url))
 // title, description and structured data rather than relying on JavaScript.
 const input = {
   main: page('index.html'),
+  testimonial: page('testimonial/index.html'),
   ...Object.fromEntries(sectionPages.map((s) => [`section-${s.slug}`, page(`${s.slug}/index.html`)])),
   ...Object.fromEntries(servicePages.map((s) => [`service-${s.slug}`, page(`services/${s.slug}/index.html`)])),
   ...Object.fromEntries(industryPages.map((s) => [`industry-${s.slug}`, page(`industries/${s.slug}/index.html`)])),
