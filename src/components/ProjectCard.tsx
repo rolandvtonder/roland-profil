@@ -61,19 +61,28 @@ export default function ProjectCard({ project, index }: { project: Project; inde
             <div className="w-12 shrink-0" />
           </div>
           <div className="relative aspect-[16/10] overflow-hidden bg-page [container-type:size]">
-            <img
-              src={asset(image)}
-              alt={`${title} website homepage`}
-              loading="lazy"
-              decoding="async"
-              onLoad={(e) => {
-                const { naturalWidth, naturalHeight } = e.currentTarget
-                const travel = naturalHeight / naturalWidth - 10 / 16
-                setScrollSeconds(Math.min(11, Math.max(3, travel * 2)))
-              }}
-              style={{ '--scroll-duration': `${scrollSeconds}s` } as CSSProperties}
-              className="absolute inset-x-0 top-0 block h-auto w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.45,0,0.55,1)] motion-safe:group-focus-within:translate-y-[calc(-100%_+_100cqh)] motion-safe:group-focus-within:duration-(--scroll-duration) motion-safe:group-hover:translate-y-[calc(-100%_+_100cqh)] motion-safe:group-hover:duration-(--scroll-duration)"
-            />
+            {/*
+              The full-page screenshot is only worth downloading where the card
+              can actually scroll through it, which needs a real hover. Phones
+              get the small crop instead — they were pulling up to 530KB each to
+              show a thumbnail they could never scroll.
+            */}
+            <picture>
+              <source media="(hover: hover) and (min-width: 768px)" srcSet={asset(image)} />
+              <img
+                src={asset(image.replace('/work/', '/work/thumbs/'))}
+                alt={`${title} website homepage`}
+                loading="lazy"
+                decoding="async"
+                onLoad={(e) => {
+                  const { naturalWidth, naturalHeight } = e.currentTarget
+                  const travel = naturalHeight / naturalWidth - 10 / 16
+                  setScrollSeconds(Math.min(11, Math.max(3, travel * 2)))
+                }}
+                style={{ '--scroll-duration': `${scrollSeconds}s` } as CSSProperties}
+                className="absolute inset-x-0 top-0 block h-auto w-full transition-transform duration-[900ms] ease-[cubic-bezier(0.45,0,0.55,1)] motion-safe:group-focus-within:translate-y-[calc(-100%_+_100cqh)] motion-safe:group-focus-within:duration-(--scroll-duration) motion-safe:group-hover:translate-y-[calc(-100%_+_100cqh)] motion-safe:group-hover:duration-(--scroll-duration)"
+              />
+            </picture>
           </div>
         </div>
 
