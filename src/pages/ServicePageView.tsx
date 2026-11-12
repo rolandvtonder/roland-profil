@@ -8,6 +8,7 @@ import {
   PenNibIcon,
   ShoppingBagOpenIcon,
   StackIcon,
+  HouseLineIcon,
   MegaphoneIcon,
   TruckIcon,
   WrenchIcon,
@@ -37,6 +38,7 @@ const icons: Record<ServiceIcon, Icon> = {
   wrench: WrenchIcon,
   truck: TruckIcon,
   megaphone: MegaphoneIcon,
+  house: HouseLineIcon,
 }
 
 export default function ServicePageView({ slug, kind = 'service' }: { slug: string; kind?: 'service' | 'industry' }) {

@@ -23,6 +23,7 @@ export type ServiceIcon =
   | 'wrench'
   | 'truck'
   | 'megaphone'
+  | 'house'
 
 export type ServicePage = {
   slug: string
@@ -356,6 +357,49 @@ export const servicePages: ServicePage[] = [
 // nobody searches "web designer for growing businesses", they search "website
 // for event planners". Same shape as a service page, different angle.
 export const industryPages: ServicePage[] = [
+  {
+    slug: 'accommodation',
+    icon: 'house',
+    title: 'Website Design for Guest Houses & Self-Catering | Roland Web Design',
+    description:
+      'Websites for guest houses, B&Bs and self-catering in South Africa: direct bookings instead of platform commission, live availability and WhatsApp enquiries.',
+    heading: 'Websites for',
+    headingAccent: 'guest houses and self-catering.',
+    intro:
+      'You already have guests. What you may not have is a way to take their booking without somebody else taking a cut of it. A good accommodation website is not a brochure — it is the cheapest booking channel you will ever own.',
+    problem: {
+      title: 'The platforms introduce you, then charge you forever',
+      body: 'Booking.com and Airbnb are worth being on. They put you in front of people who have never heard of you. The problem is what happens next: the guest who loved their stay comes back through the same platform and you pay commission on them again, and again, for years. The guest was yours after the first visit. The booking was not. A site of your own turns a repeat guest into a repeat guest who costs you nothing.',
+    },
+    includes: [
+      { title: 'Direct booking with live availability', text: 'Real dates, booked on your site. Every one of these is a night you keep in full.' },
+      { title: 'Your platform rating, working for you', text: 'The reviews you earned on Booking.com shown on your own page. That borrowed credibility is what makes a stranger comfortable booking somewhere they have not heard of.' },
+      { title: 'The questions that decide the booking', text: 'How far to the beach, how many it sleeps, parking, load-shedding and back-up power, whether dogs are allowed. Answered in the first screen, not a house-rules page.' },
+      { title: 'The place, not just the property', text: 'Nobody books a two-bedroom flat. They book a weekend somewhere. The village, the beach and what there is to do get real space.' },
+      { title: 'Photography that carries the sale', text: 'Properly compressed so a gallery still opens quickly on patchy signal, which is where half your guests will be looking.' },
+      { title: 'WhatsApp for the awkward questions', text: 'Late check-in, a cot, the dog. The questions people will not book without asking, answered in a chat rather than lost.' },
+    ],
+    process: [
+      { step: '01', title: 'Free homepage preview', text: 'Send me your best photographs and your rates, and I will design your homepage for free so you can see it before deciding.' },
+      { step: '02', title: 'Sort out the booking side', text: 'How you keep your calendar now, whether you need deposits, and how direct bookings should reach you.' },
+      { step: '03', title: 'Build', text: 'Rooms, rates, the area guide, the gallery and the booking flow, tested on a phone throughout.' },
+      { step: '04', title: 'Launch and get found', text: 'Live on your domain, with your Google Business Profile set up so people searching your town can find you.' },
+    ],
+    goodFor: [
+      'Guest houses, B&Bs and self-catering flats',
+      'Small lodges and farm stays',
+      'Owners paying commission on repeat guests',
+      'Anyone whose only presence is a Booking.com listing',
+    ],
+    faqs: [
+      { question: 'Do you build websites for guest houses and B&Bs?', answer: 'Yes. Bokkoms, a self-catering guesthouse in Paternoster, is a live client, and there is a full case study of that build in my portfolio.' },
+      { question: 'Should I leave Booking.com and Airbnb?', answer: 'No. They are how new guests find you, and that is worth paying for. The aim is to own the guests they introduce you to, so that returning visitors and anyone who searches your name books direct instead.' },
+      { question: 'Can the site show live availability?', answer: 'Yes. How it works depends on how you manage your calendar now, and whether you want to take a deposit or full payment at the time of booking. We work that out before anything is built.' },
+      { question: 'I only have a few rooms. Is a website worth it?', answer: 'Usually yes, and the smaller you are the more the commission hurts. Work out what you paid in platform fees last year. For most small places, a website pays for itself within a season.' },
+      { question: 'What about Google? Nobody searches my guesthouse by name.', answer: 'Some do, especially returning guests and people given your name by a friend, and those are exactly the bookings you want direct. Beyond that, a Google Business Profile puts you on the map for people searching your town, and I set that up as part of the job.' },
+    ],
+    relatedProjects: ['Bokkoms', 'Flexi Travel & Safari'],
+  },
   {
     slug: 'event-planners',
     icon: 'calendar',
