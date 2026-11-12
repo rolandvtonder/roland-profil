@@ -91,6 +91,17 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'Bokkoms',
+    caseStudy: 'guest-house-website',
+    category: 'Self-catering guesthouse · Paternoster',
+    status: 'client',
+    description:
+      'A direct-booking site for a two-bedroom self-catering guesthouse on the West Coast, built so guests book with the owners instead of through a platform that takes a cut of every night.',
+    highlights: ['Live availability', 'Direct booking', 'Booking.com rating', 'WhatsApp enquiries'],
+    url: 'https://stayatbokkomsinpaternoster.com/',
+    image: '/work/bokkoms.webp',
+  },
+  {
     title: 'Flexi Travel & Safari',
     caseStudy: 'safari-travel-website',
     category: 'Safari & travel · Spain and South Africa',

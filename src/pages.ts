@@ -648,6 +648,47 @@ export type CaseStudy = {
 
 export const caseStudies: CaseStudy[] = [
   {
+    slug: 'guest-house-website',
+    project: 'Bokkoms',
+    status: 'client',
+    title: 'Guest House Website Design Case Study | Bokkoms Paternoster',
+    description:
+      'How I built a direct-booking website for a self-catering guesthouse in Paternoster: live availability, WhatsApp enquiries, and an escape from booking-platform commission.',
+    heading: 'A guesthouse site built',
+    headingAccent: 'to stop paying commission.',
+    intro:
+      'Bokkoms is a two-bedroom self-catering guest flat a few minutes\u2019 walk from Bekbaai beach in Paternoster, run by hosts who live upstairs. Like most small places on the West Coast, nearly every booking arrived through a platform \u2014 and every one of those bookings left with a slice of the nightly rate attached.',
+    client: [
+      { label: 'Client', value: 'Bokkoms Self-Catering' },
+      { label: 'Industry', value: 'Guesthouse and self-catering' },
+      { label: 'Based', value: 'Paternoster, West Coast' },
+      { label: 'Scope', value: 'Design, build, booking setup, launch' },
+    ],
+    brief:
+      'A guest who finds you on a booking platform is not your guest, they are the platform\u2019s. You pay for them every time they return. The job was to give Bokkoms somewhere of their own to send people \u2014 a site that answers what a guest actually wants to know and lets them book on the spot, without the trust gap that normally makes people retreat to the platform they recognise.',
+    built: [
+      { title: 'Live availability and direct booking', text: 'Guests see real dates and book on the site. Every booking that comes through here is one the owners keep in full.' },
+      { title: 'The platform rating, used as proof', text: '9.3 out of 10 from 91 reviews, shown on their own page. The reviews live on a booking platform, so borrowing that credibility is what makes a stranger comfortable booking direct.' },
+      { title: 'The questions guests actually ask', text: 'How far to the beach, how many it sleeps, is there back-up power, are dogs allowed. Answered in the first screen rather than buried in a house-rules page.' },
+      { title: 'The village, not just the flat', text: 'People do not book Paternoster for a kitchen. Bekbaai beach, Cape Columbine and the food and art the village is known for get their own space.' },
+      { title: 'WhatsApp for everything else', text: 'Some guests want to ask about a cot, a late check-in or the dog before they commit. One tap, and the booking follows the conversation.' },
+    ],
+    decisions: [
+      { title: 'Lead with the place, not the property', text: 'Full-bleed photography of the coastline and the village above the room details. Nobody dreams about a two-bedroom flat; they dream about the West Coast and then check whether the flat works.' },
+      { title: 'Put the numbers where they cannot be missed', text: 'Distance to the beach, how many it sleeps, the guest rating and back-up power, as plain figures near the top. Those four decide whether someone keeps reading.' },
+      { title: 'Say the hosts live upstairs', text: 'It could read as a drawback and it is actually the selling point against a faceless rental. Stated openly, with the promise that they are out of the way when you want them to be.' },
+      { title: 'Make booking direct the easiest option', text: 'Not by hiding the platforms, but by making the direct route faster and the page more reassuring than a listing ever is.' },
+    ],
+    outcome:
+      'Bokkoms now have somewhere of their own to send guests \u2014 a site that answers the questions that decide a booking, shows the rating they earned elsewhere, and takes the booking without a commission attached.',
+    faqs: [
+      { question: 'Do you build websites for guesthouses and self-catering?', answer: 'Yes. Accommodation has a very specific job to do: answer the handful of questions that decide a booking, prove you are trustworthy, and take the booking before the guest goes back to comparing. Bokkoms in Paternoster is a live example.' },
+      { question: 'Can a small guesthouse really get direct bookings?', answer: 'Yes, and it is usually the single most profitable change a small place can make. Booking platforms charge a commission on every night. A guest who books direct the second time has paid for the website several times over.' },
+      { question: 'Should I still list on Booking.com and Airbnb?', answer: 'Almost certainly, because that is where new guests find you. The aim is not to leave the platforms, it is to own the guests they introduce you to \u2014 so returning visitors and anyone who searches your name books direct.' },
+      { question: 'Can you add live availability and online payment?', answer: 'Yes. How far it goes depends on how you manage your calendar and whether you need deposits or full payment upfront, and we work that out before building.' },
+    ],
+  },
+  {
     slug: 'safari-travel-website',
     project: 'Flexi Travel & Safari',
     status: 'client',
