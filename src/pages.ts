@@ -615,7 +615,7 @@ export const sectionPages: SectionPage[] = [
     heading: 'Every site',
     headingAccent: 'I have designed and built.',
     intro:
-      'Four paying clients on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
+      'Four live client sites on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
   },
   {
     slug: 'how-it-works',
