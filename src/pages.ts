@@ -585,6 +585,17 @@ export type SectionPage = {
 
 export const sectionPages: SectionPage[] = [
   {
+    slug: 'reviews',
+    title: 'Client Reviews | Roland Web Design',
+    description:
+      'What clients say about working with Roland Web Design, in their own words: reviews from LIFTR Co and Flexi Tours, each linking to the live site behind it.',
+    eyebrow: 'Reviews',
+    heading: 'What clients say,',
+    headingAccent: 'in their own words.',
+    intro:
+      'Anyone can write nice things about themselves on their own website. These were written by the people who paid for the work, published exactly as they sent them, and every one links to the business it came from so you can check it.',
+  },
+  {
     slug: 'pricing',
     title: 'Website Prices South Africa | Roland Web Design',
     description:
@@ -604,7 +615,7 @@ export const sectionPages: SectionPage[] = [
     heading: 'Every site',
     headingAccent: 'I have designed and built.',
     intro:
-      'Three paying clients on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
+      'Four paying clients on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
   },
   {
     slug: 'how-it-works',

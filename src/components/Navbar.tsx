@@ -85,8 +85,10 @@ export default function Navbar({ menuOpen, onMenuOpenChange }: NavbarProps) {
             <span className="font-display text-2xl font-extrabold tracking-[-0.02em] text-white md:text-[25px]">{site.name}</span>
           </a>
 
-          {/* Center links */}
-          <ul className="absolute left-1/2 hidden -translate-x-1/2 items-center gap-[34px] lg:flex">
+          {/* Center links. Absolutely centred only from xl, where there is room for it:
+              on a 1024-1280 laptop they sit in the flex flow instead, so they can never
+              run underneath the logo or the button no matter how many links there are. */}
+          <ul className="hidden items-center gap-[22px] lg:flex xl:absolute xl:left-1/2 xl:-translate-x-1/2 xl:gap-[34px]">
             {navLinks.map((link) => {
               const isActive = onHomepage ? active === link.href.replace(/^\/?#/, '') : window.location.pathname.startsWith(link.href)
               return (

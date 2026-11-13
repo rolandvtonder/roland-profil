@@ -2,6 +2,7 @@ import PageShell from '../components/PageShell'
 import SubPageHero from '../components/SubPageHero'
 import CtaBand from '../components/CtaBand'
 import Work from '../components/Work'
+import Testimonials from '../components/Testimonials'
 import HowItWorks from '../components/HowItWorks'
 import Services from '../components/Services'
 import Pricing from '../components/Pricing'
@@ -21,6 +22,7 @@ export default function SectionPageView({ slug }: { slug: string }) {
 
   const body = {
     work: <Work variant="full" heading={false} />,
+    reviews: <Testimonials heading={false} />,
     'how-it-works': <HowItWorks heading={false} />,
     services: <Services heading={false} />,
     pricing: <Pricing heading={false} />,

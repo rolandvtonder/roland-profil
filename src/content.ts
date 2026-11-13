@@ -54,6 +54,7 @@ export const socials: { label: 'LinkedIn' | 'Instagram' | 'GitHub'; href: string
 // Root-absolute so they also work from /services/... and /work/... pages
 export const navLinks = [
   { label: 'Work', href: '/work/' },
+  { label: 'Reviews', href: '/reviews/' },
   { label: 'How it works', href: '/how-it-works/' },
   { label: 'Services', href: '/services/' },
   { label: 'Pricing', href: '/pricing/' },

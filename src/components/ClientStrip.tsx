@@ -5,9 +5,9 @@ import { projects } from '../content'
 const clients = projects.filter((p) => p.status === 'client')
 
 /**
- * Named clients under the hero. Every portfolio guide puts social proof near
- * the top; until there are testimonials to quote, the honest version of that
- * is the businesses that actually paid, each linking to its case study.
+ * Named clients under the hero, because every portfolio guide puts social
+ * proof near the top. The businesses that actually paid, each linking to its
+ * case study. Their reviews live on /reviews/.
  */
 export default function ClientStrip() {
   if (clients.length === 0) return null
