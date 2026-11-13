@@ -123,6 +123,12 @@ export const projects: Project[] = [
     highlights: ['Service pages', 'Lift gallery', 'Equipment for sale', 'WhatsApp quotes'],
     url: 'https://liftrco.co.za/',
     image: '/work/liftr.webp',
+    testimonial: {
+      quote:
+        'Working with Roland on the LIFTR site was an absolute breeze. He is responsive, proactive, and brought great creative and technical ideas to the table that made our site stand out. If you need a reliable web designer who delivers high-quality work on time, Roland is your guy.',
+      name: 'Daron Medcalf',
+      role: 'Owner, LIFTR Co',
+    },
     featured: true,
   },
   {
@@ -135,6 +141,11 @@ export const projects: Project[] = [
     highlights: ['Tour catalogue', 'Transfer pricing', 'Travel guides', 'WhatsApp booking'],
     url: 'https://flexi-tours.co.za/',
     image: '/work/flexitours.webp',
+    testimonial: {
+      quote: 'Fantastic to work with, very good attention to detail and got the job done better than expected.',
+      name: 'George',
+      role: 'Manager, Flexi Tours',
+    },
     featured: true,
   },
   {

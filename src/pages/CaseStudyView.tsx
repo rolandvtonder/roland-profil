@@ -1,4 +1,4 @@
-import { ArrowUpRightIcon, LockSimpleIcon, PencilSimpleIcon, SealCheckIcon } from '@phosphor-icons/react'
+import { ArrowUpRightIcon, LockSimpleIcon, PencilSimpleIcon, QuotesIcon, SealCheckIcon } from '@phosphor-icons/react'
 import PageShell from '../components/PageShell'
 import SubPageHero from '../components/SubPageHero'
 import FaqList from '../components/FaqList'
@@ -161,6 +161,23 @@ export default function CaseStudyView({ slug }: { slug: string }) {
           </ol>
         </div>
       </section>
+
+      {/* The client's own words, where they have given them */}
+      {project.testimonial && (
+        <section className="px-gutter pb-24 md:pb-32">
+          <Reveal className="mx-auto max-w-[820px] rounded-3xl border border-accent/25 bg-accent/[0.05] px-7 py-10 sm:px-12 sm:py-12">
+            <QuotesIcon size={30} weight="fill" aria-hidden="true" className="text-accent-soft" />
+            <blockquote className="mt-5 font-display text-[1.3rem] leading-[1.5] text-ink sm:text-[1.5rem]" style={{ fontWeight: 500, textWrap: 'balance' }}>
+              {project.testimonial.quote}
+            </blockquote>
+            <figcaption className="mt-6 text-[15px] text-ink-muted">
+              <span className="text-ink">{project.testimonial.name}</span>
+              {' \u2014 '}
+              {project.testimonial.role}
+            </figcaption>
+          </Reveal>
+        </section>
+      )}
 
       {/* Outcome */}
       <section className="px-gutter pb-24 md:pb-32">
