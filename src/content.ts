@@ -23,8 +23,9 @@ export const site = {
   businessName: 'Roland Web Design', // the trading name, used in the page title and copyright
   url: 'https://rolandwebdesign.co.za',
   role: 'Designer & Developer',
-  // Switch to hello@rolandwebdesign.co.za once the domain and mailbox are set up
-  email: 'rolandvtonder@gmail.com',
+  // Google Workspace mailbox, live since 2026-11-23. SPF, DKIM and DMARC all verified passing.
+  // roland@ rather than info@ or hello@: it is a one-man business and people reply to a person.
+  email: 'roland@rolandwebdesign.co.za',
   whatsapp: {
     display: '+27 64 070 3335',
     number: '27640703335', // international format (27 + number without the leading 0) for wa.me links
