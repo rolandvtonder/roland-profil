@@ -174,6 +174,9 @@ export default function CaseStudyView({ slug }: { slug: string }) {
               <span className="text-ink">{project.testimonial.name}</span>
               {' \u2014 '}
               {project.testimonial.role}
+              {project.testimonial.source && (
+                <span className="text-ink-subtle"> &middot; {project.testimonial.source}</span>
+              )}
             </figcaption>
           </Reveal>
         </section>

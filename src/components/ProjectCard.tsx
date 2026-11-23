@@ -141,6 +141,7 @@ export default function ProjectCard({ project, index }: { project: Project; inde
               <blockquote className="mt-2 text-[15px] leading-relaxed text-ink">“{testimonial.quote}”</blockquote>
               <figcaption className="mt-3 text-sm text-ink-muted">
                 {testimonial.name}, {testimonial.role}
+                {testimonial.source && <span className="text-ink-subtle"> &middot; {testimonial.source}</span>}
               </figcaption>
             </figure>
           )}

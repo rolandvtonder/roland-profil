@@ -86,7 +86,9 @@ export type Project = {
   image: string
   /** Slug of a case study page under /work/<slug>/ */
   caseStudy?: string
-  testimonial?: { quote: string; name: string; role: string }
+  /** `source` credits a review quoted from elsewhere, e.g. 'Google review'.
+   *  Leave it off for one sent straight to Roland through /testimonial/. */
+  testimonial?: { quote: string; name: string; role: string; source?: string }
   featured?: boolean
 }
 
@@ -113,6 +115,13 @@ export const projects: Project[] = [
     highlights: ['Live availability', 'Direct booking', 'Booking.com rating', 'WhatsApp enquiries'],
     url: 'https://stayatbokkomsinpaternoster.com/',
     image: '/work/bokkoms.webp',
+    testimonial: {
+      quote:
+        'Our brand new website designed by Roland came with very little effort from our side. He made it easy was flexible when I requested access to do some edits myself. Very affordable and it looks so much more professional than my previous dated site. Thank you Roland. Really appreciate your contribution to our small business.',
+      name: 'Amanda',
+      role: 'Bokkoms Self-Catering, Paternoster',
+      source: 'Google review',
+    },
     featured: true,
   },
   {

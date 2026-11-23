@@ -79,6 +79,12 @@ export default function Testimonials({
                     </p>
                     <p className="mt-1 text-[15px] text-ink-muted">
                       {testimonial.role}
+                      {testimonial.source && (
+                        <span className="text-ink-subtle">
+                          {" "}
+                          &middot; {testimonial.source}
+                        </span>
+                      )}
                     </p>
 
                     <div className="mt-5 flex flex-wrap items-center gap-x-6 gap-y-3">
@@ -169,11 +175,11 @@ export default function Testimonials({
           <span className="text-ink">
             These are real, and you can check them.
           </span>{" "}
-          Every review here was submitted by the client through a form on this
-          site and published word for word, with their permission. Nothing has
-          been edited or tidied up. Each one links to the business it came from
-          and the site I built for them, so you can look at the work and contact
-          them yourself if you want to.
+          Each one was written by the client and published word for word, with
+          nothing edited or tidied up. Some were sent to me through the form on
+          this site; the ones marked as a Google review are public on my Google
+          listing, where you can read them for yourself. Every review links to
+          the business it came from and the site I built for them.
         </p>
       </Reveal>
     </section>
