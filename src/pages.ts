@@ -138,7 +138,7 @@ export const servicePages: ServicePage[] = [
       { question: 'What if I do not like the design?', answer: 'That is exactly why the first homepage is free. If it is not right, you have lost nothing and owe me nothing.' },
       { question: 'Can you redesign my existing site?', answer: 'Yes, and it is often the quickest win. You already have content and search history; a redesign keeps both and fixes how it looks and converts.' },
     ],
-    relatedProjects: ['LIFTR Co', 'Flexi Tours'],
+    relatedProjects: ['Karam Motors', 'LIFTR Co', 'Flexi Tours'],
   },
   {
     slug: 'web-development',
@@ -180,7 +180,7 @@ export const servicePages: ServicePage[] = [
       { question: 'How long does a build take?', answer: 'Most small business sites are live within one to two weeks of approving the design, depending on how quickly the content comes together.' },
       { question: 'Do I need to buy hosting?', answer: 'I can arrange hosting and your domain, or work with what you already have. Either way you own both.' },
     ],
-    relatedProjects: ['LIFTR Co', 'JPM Plumbing & Electrical'],
+    relatedProjects: ['Karam Motors', 'LIFTR Co', 'JPM Plumbing & Electrical'],
   },
   {
     slug: 'mobile-apps',
@@ -702,6 +702,49 @@ export type CaseStudy = {
 }
 
 export const caseStudies: CaseStudy[] = [
+  {
+    slug: 'car-dealership-website',
+    project: 'Karam Motors',
+    status: 'client',
+    title: 'Car Dealership Website Design Case Study | Karam Motors Fourways',
+    description:
+      'How I designed and built karammotors.co.za for a family-run Fourways dealership: stock listings with full photo sets, a repayment estimator, finance to five lenders and trade-in valuations.',
+    heading: 'A family dealership,',
+    headingAccent: 'online after 46 years.',
+    intro:
+      'Karam Motors has been buying and selling cars in Johannesburg since 1980 — first on Oxford Street in Randburg, now in Fourways. Lenny Karam opened the doors, his son Greg runs it today, and the next generation is already in the business. Forty-six years of reputation, all of it built on the floor and by word of mouth, and none of it visible where people now start looking for a car.',
+    client: [
+      { label: 'Client', value: 'Karam Motors' },
+      { label: 'Industry', value: 'Pre-owned car dealership' },
+      { label: 'Based', value: 'Fourways, Johannesburg' },
+      { label: 'Scope', value: 'Design, build, stock system, launch' },
+    ],
+    brief:
+      'Buying a used car is an anxious purchase, and almost all of that anxiety is about the seller rather than the car. A family that has traded under its own name for forty-six years has the answer to that already — it just had nowhere to say it. The job was to carry the trust that works on the floor onto a screen, and to answer the three questions every buyer has before they will pick up the phone: what have you got, can I afford it, and what is my car worth.',
+    built: [
+      { title: 'Every car on its own page', text: 'Thirteen cars on the floor, each with ten to twelve photographs, the year, colour, mileage and price. No contacting the dealer to find out what something costs.' },
+      { title: 'A repayment estimator tied to real stock', text: 'Pick a car, set a deposit and a term, and see the monthly instalment. Buyers do this arithmetic anyway, usually on a bank site that then tries to sell them its own finance.' },
+      { title: 'Five lenders, one application', text: 'ABSA, Marquis Finance, MFC, Standard Bank and WesBank, with the document checklist stated plainly so nobody arrives missing a bank statement.' },
+      { title: 'A trade-in valuation that asks the right questions', text: 'Make, model, year, mileage, condition and accident history, structured so the dealership can price it properly and come back inside 48 hours.' },
+      { title: 'The services, told as you scroll', text: 'Finance, trade-ins, licensing and warranties presented as a pinned sequence against full-bleed photography of cars actually on the floor.' },
+      { title: 'The family story, given room', text: 'Oxford Street in 1980, Greg taking the keys, and the family in the business now. Against a faceless online dealer, that story is the whole advantage.' },
+    ],
+    decisions: [
+      { title: 'Put the year on the door', text: '“Family owned since 1980” is the first thing on the site. A buyer deciding between a private seller and a dealer is weighing exactly one thing, and four decades of trading under the same name settles it faster than any amount of copy.' },
+      { title: 'Show the price, always', text: 'Plenty of dealer sites hide prices to force an enquiry. That wins the few who call and loses everyone else. Every car here carries its price, its mileage and its photographs on the listing itself.' },
+      { title: 'Photograph the stock properly', text: 'The cars are shot full-bleed and given real space. On a used-car site the photography is the product, and a grid of thumbnails would have undersold what is on the floor.' },
+      { title: 'Let buyers do the maths themselves', text: 'The estimator answers “can I afford this” without a phone call. Someone who has already worked out their instalment arrives ready to buy rather than ready to ask.' },
+      { title: 'Keep WhatsApp one tap away', text: 'Car buyers ask a question long before they walk in. The enquiry opens already addressed, so nobody has to explain who they are or what they were looking at.' },
+    ],
+    outcome:
+      'Karam Motors now has a site that does what their floor does: shows the stock, prices it openly, answers the finance question before it is asked, and puts a family name behind all of it. Someone searching for a car in Fourways can see what is available, work out the instalment and start a trade-in without speaking to anyone — and arrives already knowing who they are dealing with.',
+    faqs: [
+      { question: 'Do you build websites for car dealerships?', answer: 'Yes. Karam Motors in Fourways is a live example. A dealership site has specific work to do: list stock with proper photography and prices, answer the finance question, and take trade-in enquiries in a form that is actually useful to the dealer.' },
+      { question: 'Can the site handle stock that changes every week?', answer: 'Yes. Cars come and go, so adding, editing and removing stock has to be quick and must not need a developer every time. That gets set up as part of the build.' },
+      { question: 'Should a dealership show prices online?', answer: 'In almost every case, yes. Hiding the price to force an enquiry wins the handful of people who call and loses everyone who is comparing. A buyer who has seen the price and worked out the instalment is a far warmer lead than one who had to ask.' },
+      { question: 'What does a dealership website cost?', answer: 'It depends on how many cars you carry and whether you need finance tools and trade-in forms. You get a fixed quote upfront, and a free homepage design first so you can see it before deciding.' },
+    ],
+  },
   {
     slug: 'guest-house-website',
     project: 'Bokkoms',

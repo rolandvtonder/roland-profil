@@ -92,6 +92,18 @@ export type Project = {
 
 export const projects: Project[] = [
   {
+    title: 'Karam Motors',
+    caseStudy: 'car-dealership-website',
+    category: 'Car dealership · Fourways',
+    status: 'client',
+    description:
+      'A full website for a family-run Fourways dealership trading since 1980: every car in stock on its own page, a repayment estimator tied to real prices, finance to five lenders and a structured trade-in valuation.',
+    highlights: ['Stock listings', 'Repayment estimator', 'Finance applications', 'Trade-in valuations'],
+    url: 'https://karammotors.co.za/',
+    image: '/work/karam-motors.webp',
+    featured: true,
+  },
+  {
     title: 'Bokkoms',
     caseStudy: 'guest-house-website',
     category: 'Self-catering guesthouse · Paternoster',
