@@ -24,6 +24,7 @@ export type ServiceIcon =
   | 'truck'
   | 'megaphone'
   | 'house'
+  | 'car'
 
 export type ServicePage = {
   slug: string
@@ -357,6 +358,50 @@ export const servicePages: ServicePage[] = [
 // nobody searches "web designer for growing businesses", they search "website
 // for event planners". Same shape as a service page, different angle.
 export const industryPages: ServicePage[] = [
+  {
+    slug: 'car-dealerships',
+    icon: 'car',
+    title: 'Website Design for Car Dealerships | Roland Web Design',
+    description:
+      'Websites for independent car dealerships in South Africa: stock listings with real prices, repayment estimators, finance applications and trade-in valuations.',
+    heading: 'Websites for',
+    headingAccent: 'car dealerships.',
+    intro:
+      'Almost nobody walks onto a floor cold any more. They look first, decide which two dealers are worth the drive, and only then get in the car. Your website is where that shortlist gets made — and if yours sends people back to a listing site to find out what anything costs, you are paying to be compared against everyone else.',
+    problem: {
+      title: 'The listing sites introduce the buyer, then stand between you',
+      body: 'AutoTrader and Cars.co.za are worth being on — that is where people start. The trouble is what the page looks like when they get there: your car, sitting in a row next to eleven others at a similar price, with nothing on screen to say who you are or why forty years of trading under one name counts for anything. You pay for the listing, you pay for the lead, and the only thing the buyer can compare is price. A site of your own is the one place where the full stock, the finance answer and the reason to trust you sit together, with nobody else in the frame.',
+    },
+    includes: [
+      { title: 'Every car on its own page', text: 'Full photo sets, year, mileage, colour and the price, on the listing itself. A buyer who has to enquire to find out what something costs usually just leaves.' },
+      { title: 'A repayment estimator', text: 'Deposit, term and instalment worked out on your site against your actual stock. Buyers do this arithmetic anyway — better on your page than on a bank’s.' },
+      { title: 'Finance applications that go somewhere', text: 'Your lenders listed, the document checklist spelled out, and an application that reaches you properly rather than as a one-line email.' },
+      { title: 'Trade-in valuations worth reading', text: 'Make, model, year, mileage, condition and accident history, asked in a form that gives you enough to price the car before you phone back.' },
+      { title: 'The reason to buy from you', text: 'How long you have traded, who runs it, where you are. Against a faceless online dealer this is the entire argument, and most dealership sites never make it.' },
+      { title: 'WhatsApp tied to the car', text: 'The enquiry opens with the vehicle already attached, so nobody has to explain which bakkie they were looking at.' },
+    ],
+    process: [
+      { step: '01', title: 'Free homepage preview', text: 'Send me a few of your cars and I will design your homepage for free, so you can see it before deciding anything.' },
+      { step: '02', title: 'Sort out the stock side', text: 'How many cars you carry, how fast they turn, who loads them and whether photos come from you or a feed.' },
+      { step: '03', title: 'Build', text: 'Stock, finance, trade-ins and the story of the business, tested on a phone throughout — which is where almost all car browsing happens.' },
+      { step: '04', title: 'Launch and get found', text: 'Live on your domain, with your Google Business Profile set up so people searching for a dealer in your area find you.' },
+    ],
+    goodFor: [
+      'Independent and family-run dealerships',
+      'Bakkie, 4x4 and specialist dealers',
+      'Dealers paying for leads on listing sites',
+      'Anyone whose only presence is an AutoTrader page',
+    ],
+    faqs: [
+      { question: 'Do you build websites for car dealerships?', answer: 'Yes. Karam Motors in Fourways, a family dealership trading since 1980, is a live client, and there is a full case study of that build in my portfolio.' },
+      { question: 'Should I still list on AutoTrader and Cars.co.za?', answer: 'Yes. That is where most buyers start, and it is worth paying for. The aim is not to leave them, it is to own what happens next — so the buyer who searches your name, or clicks through from a listing, lands somewhere that sells you rather than just the car.' },
+      { question: 'How does stock get updated when cars sell?', answer: 'Adding, editing and removing cars has to be quick and must not need a developer every time. How we set it up depends on how many cars you carry and how fast they move, and we work that out before building.' },
+      { question: 'Should I show prices on my website?', answer: 'In almost every case, yes. Hiding the price to force a phone call wins the few who call and loses everyone who was comparing. A buyer who has seen the price and worked out their instalment is a far warmer lead than one who had to ask.' },
+      { question: 'Can the site handle finance applications?', answer: 'Yes — your lenders, the document checklist and an application that arrives with enough detail to act on. It can include a repayment estimator so buyers answer the affordability question themselves.' },
+      { question: 'What does a dealership website cost?', answer: 'It depends on how many cars you carry and whether you need finance tools and trade-in forms. You get a fixed quote upfront, and the homepage design is free either way.' },
+    ],
+    relatedProjects: ['Karam Motors'],
+  },
   {
     slug: 'accommodation',
     icon: 'house',

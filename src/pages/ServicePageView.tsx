@@ -1,6 +1,7 @@
 import {
   AirplaneTiltIcon,
   CalendarCheckIcon,
+  CarProfileIcon,
   ChartLineUpIcon,
   CheckIcon,
   CodeIcon,
@@ -39,6 +40,7 @@ const icons: Record<ServiceIcon, Icon> = {
   truck: TruckIcon,
   megaphone: MegaphoneIcon,
   house: HouseLineIcon,
+  car: CarProfileIcon,
 }
 
 export default function ServicePageView({ slug, kind = 'service' }: { slug: string; kind?: 'service' | 'industry' }) {
