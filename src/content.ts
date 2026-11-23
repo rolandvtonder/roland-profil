@@ -103,6 +103,12 @@ export const projects: Project[] = [
     highlights: ['Stock listings', 'Repayment estimator', 'Finance applications', 'Trade-in valuations'],
     url: 'https://karammotors.co.za/',
     image: '/work/karam-motors.webp',
+    testimonial: {
+      quote: 'Roland did a great job with my website, also very reasonably priced. highly recommend.',
+      name: 'Greg Karam',
+      role: 'Karam Motors, Fourways',
+      source: 'Google review',
+    },
     featured: true,
   },
   {
@@ -151,6 +157,7 @@ export const projects: Project[] = [
         'Working with Roland on the LIFTR site was an absolute breeze. He is responsive, proactive, and brought great creative and technical ideas to the table that made our site stand out. If you need a reliable web designer who delivers high-quality work on time, Roland is your guy.',
       name: 'Daron Medcalf',
       role: 'Owner, LIFTR Co',
+      source: 'Google review',
     },
     featured: true,
   },
