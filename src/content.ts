@@ -45,10 +45,14 @@ export const whatsappUrl = `https://wa.me/${site.whatsapp.number}?text=${encodeU
 export const previewCta = { label: 'Get a Free Preview', href: '/contact/' }
 
 // Add a full URL to show a profile in the Contact section and footer.
-export const socials: { label: 'LinkedIn' | 'Instagram' | 'GitHub'; href: string }[] = [
-  { label: 'LinkedIn', href: '' },
+// An empty href is skipped, so a profile only appears once it has something on it.
+// Facebook leads because it is the one that matters here: Roland's buyers are on it,
+// and a Page is required to run Meta ads for his own business. GitHub was dropped --
+// it signals to developers, and he sells to business owners.
+export const socials: { label: 'Facebook' | 'Instagram' | 'LinkedIn'; href: string }[] = [
+  { label: 'Facebook', href: '' },
   { label: 'Instagram', href: '' },
-  { label: 'GitHub', href: '' },
+  { label: 'LinkedIn', href: '' },
 ]
 
 // Root-absolute so they also work from /services/... and /work/... pages

@@ -5,7 +5,7 @@ import {
   CircleNotchIcon,
   ClockIcon,
   EnvelopeSimpleIcon,
-  GithubLogoIcon,
+  FacebookLogoIcon,
   InstagramLogoIcon,
   LinkedinLogoIcon,
   MapPinIcon,
@@ -27,7 +27,7 @@ type Errors = Partial<Record<Field, string>>
 const emptyValues: Values = { name: '', business: '', email: '', phone: '', website: '', message: '' }
 const fieldOrder: Field[] = ['name', 'business', 'email', 'phone', 'message']
 const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/
-const socialIcons = { LinkedIn: LinkedinLogoIcon, Instagram: InstagramLogoIcon, GitHub: GithubLogoIcon }
+const socialIcons = { Facebook: FacebookLogoIcon, Instagram: InstagramLogoIcon, LinkedIn: LinkedinLogoIcon }
 const activeSocials = socials.filter((social) => social.href)
 
 const contactDetails = [
