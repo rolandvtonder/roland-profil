@@ -2,6 +2,7 @@ import { ArrowUpIcon } from '@phosphor-icons/react'
 import LogoMark from './LogoMark'
 import PillLink from './PillLink'
 import { navLinks, previewCta, services, site, socials, whatsappUrl } from '../content'
+import { homeHref, isHomepage } from '../lib/home'
 import { industryPages } from '../pages'
 
 const year = new Date().getFullYear()
@@ -11,11 +12,17 @@ const activeSocials = socials.filter((social) => social.href)
 const servicePageLinks = services.filter((s) => s.slug)
 
 export default function Footer() {
+  const onHomepage = isHomepage()
+
   return (
     <footer className="relative overflow-hidden border-t border-line px-gutter pt-20">
       <div className="grid gap-12 md:grid-cols-2 lg:grid-cols-[minmax(0,1.4fr)_repeat(4,minmax(0,1fr))]">
         <div>
-          <a href="#top" className="inline-flex items-center gap-2.5 rounded-md no-underline" aria-label={`${site.name}, back to top`}>
+          <a
+            href={onHomepage ? '#top' : homeHref}
+            className="inline-flex items-center gap-2.5 rounded-md no-underline"
+            aria-label={onHomepage ? `${site.name}, back to top` : `${site.name}, go to the home page`}
+          >
             <LogoMark size={26} />
             <span className="font-display text-2xl font-extrabold tracking-[-0.02em] text-white">{site.name}</span>
           </a>
@@ -115,7 +122,15 @@ export default function Footer() {
         <p>
           © {year} {site.businessName}. All rights reserved.
         </p>
-        <a href="#top" className="group inline-flex items-center gap-2 py-1 text-ink-subtle no-underline transition-colors hover:text-ink">
+        {/* #top is the homepage hero, so on every other page this scrolls itself. */}
+        <a
+          href="#top"
+          onClick={(e) => {
+            e.preventDefault()
+            window.scrollTo({ top: 0, behavior: 'smooth' })
+          }}
+          className="group inline-flex items-center gap-2 py-1 text-ink-subtle no-underline transition-colors hover:text-ink"
+        >
           Back to top
           <ArrowUpIcon size={14} aria-hidden="true" className="transition-transform duration-200 group-hover:-translate-y-0.5" />
         </a>

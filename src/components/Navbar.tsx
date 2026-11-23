@@ -7,9 +7,9 @@ import { navLinks, previewCta, site, whatsappUrl } from '../content'
 import { useActiveSection } from '../hooks/useActiveSection'
 import { useScrolled } from '../hooks/useScrolled'
 import { easeOutSoft } from '../lib/motion'
+import { homeHref, isHomepage } from '../lib/home'
 
 const sectionIds = ['top', 'work', 'process', 'services', 'about', 'faq', 'contact'] as const
-const menuLinks = [...navLinks, { label: 'Contact', href: '/contact/' }]
 
 type NavbarProps = {
   menuOpen: boolean
@@ -61,7 +61,14 @@ export default function Navbar({ menuOpen, onMenuOpenChange }: NavbarProps) {
 
   const solid = scrolled || menuOpen
   // Section highlighting works off the scroll position at home, the path elsewhere
-  const onHomepage = typeof window !== 'undefined' && window.location.pathname === '/'
+  const onHomepage = isHomepage()
+  // There is no Home item in navLinks, so off the homepage the phone menu
+  // needs one: the logo is a desktop habit and tapping it is not obvious.
+  const menuLinks = [
+    ...(onHomepage ? [] : [{ label: 'Home', href: homeHref }]),
+    ...navLinks,
+    { label: 'Contact', href: '/contact/' },
+  ]
 
   return (
     <>
@@ -80,7 +87,14 @@ export default function Navbar({ menuOpen, onMenuOpenChange }: NavbarProps) {
           }`}
         >
           {/* Logo */}
-          <a href="#top" className="flex items-center gap-2.5 rounded-md no-underline" aria-label={`${site.name}, back to top`}>
+          {/* The logo is how most people expect to get home. Off the homepage
+              that has to be a real link, not an anchor to a section that only
+              exists on the homepage. */}
+          <a
+            href={onHomepage ? '#top' : homeHref}
+            className="flex items-center gap-2.5 rounded-md no-underline"
+            aria-label={onHomepage ? `${site.name}, back to top` : `${site.name}, go to the home page`}
+          >
             <LogoMark size={28} />
             <span className="font-display text-2xl font-extrabold tracking-[-0.02em] text-white md:text-[25px]">{site.name}</span>
           </a>
