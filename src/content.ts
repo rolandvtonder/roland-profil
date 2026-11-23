@@ -109,10 +109,11 @@ export const projects: Project[] = [
     category: 'Self-catering guesthouse · Paternoster',
     status: 'client',
     description:
-      'A direct-booking site for a two-bedroom self-catering guesthouse on the West Coast, built so guests book with the owners instead of through a platform that takes a cut of every night.',
+      'A direct-booking website for a two-bedroom self-catering guesthouse in Paternoster: live availability, rooms and rates, a guide to the village and Bekbaai beach, and WhatsApp for everything guests ask before they book.',
     highlights: ['Live availability', 'Direct booking', 'Booking.com rating', 'WhatsApp enquiries'],
     url: 'https://stayatbokkomsinpaternoster.com/',
     image: '/work/bokkoms.webp',
+    featured: true,
   },
   {
     title: 'Flexi Travel & Safari',
