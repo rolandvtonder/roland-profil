@@ -483,10 +483,9 @@ export const faqs = [
       'One-page sites start at R3 500, business websites at R7 500 and online stores at R15 000. Apps and custom software are quoted individually. See the pricing page for what each one includes — and you get a fixed quote upfront after your free homepage preview, so there are no surprises.',
   },
   {
-    // PLACEHOLDER: check these timeframes match how fast you work
     question: 'How long does it take?',
     answer:
-      'Your free preview usually takes a few days. Most small business websites are live within one to two weeks after you say yes, depending on how quickly we finalise your content.',
+      'Your free preview usually takes a few days. Most small business websites are live within one to two weeks after you say yes, depending on how quickly we finalise your content — when you already have your text and photos ready, it’s often quicker.',
   },
   {
     question: 'Do I need my own domain and hosting?',
