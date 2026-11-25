@@ -20,12 +20,19 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
 
 // Reel canvas and the window the site scrolls through.
+//
+// Instagram crops grid thumbnails to about 4:5 from the CENTRE of a 9:16 reel,
+// which on 1080x1920 is y 285..1635. Anything outside that is invisible in the
+// grid, so the logo and the title block both sit inside it -- otherwise the
+// tile shows a bare browser window and none of the branding.
 export const W = 1080
 export const H = 1920
+export const SAFE_TOP = 285
+export const SAFE_BOTTOM = 1635
 export const WIN_X = 60
-export const WIN_Y = 300
+export const WIN_Y = 470
 export const WIN_W = 960
-export const WIN_H = 1180
+export const WIN_H = 830
 export const BAR_H = 52 // browser chrome bar, sits directly above the window
 
 const C = {
@@ -76,7 +83,7 @@ function html(reel, { hole, shotUri }) {
     position: absolute; bottom: -380px; left: -280px; width: 900px; height: 900px; border-radius: 50%;
     background: radial-gradient(circle, rgba(61,126,255,${hole ? 0 : 0.15}) 0%, transparent 66%);
   }
-  .brand { position: absolute; top: 96px; left: 60px; display: flex; align-items: center; gap: 14px; }
+  .brand { position: absolute; top: ${SAFE_TOP + 25}px; left: 60px; display: flex; align-items: center; gap: 14px; }
   .brand .name { font-size: 30px; font-weight: 800; letter-spacing: -0.02em; color: ${C.ink}; }
 
   /* Chrome bar sits directly on top of the window. */
@@ -97,7 +104,8 @@ function html(reel, { hole, shotUri }) {
   }
   .win img { display: block; width: 100%; }
 
-  .foot { position: absolute; left: 60px; right: 60px; bottom: 150px; }
+  /* Bottom-anchored to the safe line, not the canvas, so the grid crop keeps it. */
+  .foot { position: absolute; left: 60px; right: 60px; top: ${WIN_Y + WIN_H + 40}px; }
   .title { font-size: ${titleSize}px; font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; color: ${C.ink}; }
   .category { margin-top: 16px; font-size: 28px; font-weight: 500; color: ${C.accentSoft}; }
   .tag {
