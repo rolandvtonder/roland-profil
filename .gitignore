@@ -27,3 +27,6 @@ Media/old-hero-video/
 /*.jpeg
 /*.jpg
 /*.png
+
+# Generated social cards -- rebuild with: node scripts/make-social-cards.mjs
+social-posts/*.png
