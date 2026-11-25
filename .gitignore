@@ -34,3 +34,4 @@ social-posts/*.png
 # Generated reels -- rebuild with: node scripts/make-reels.mjs
 social-posts/reels/*.png
 social-posts/reels/*.mp4
+social-posts/reviews/*.png
