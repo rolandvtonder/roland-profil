@@ -51,8 +51,9 @@ export const previewCta = { label: 'Get a Free Preview', href: '/contact/' }
 // and a Page is required to run Meta ads for his own business. GitHub was dropped --
 // it signals to developers, and he sells to business owners.
 export const socials: { label: 'Facebook' | 'Instagram' | 'LinkedIn'; href: string }[] = [
-  { label: 'Facebook', href: '' },
-  { label: 'Instagram', href: '' },
+  { label: 'Facebook', href: 'https://www.facebook.com/rolandwebdesign.za' },
+  { label: 'Instagram', href: 'https://www.instagram.com/rolandwebdesign.za' },
+  // LinkedIn is not set up yet. An empty href is filtered out, so it stays hidden.
   { label: 'LinkedIn', href: '' },
 ]
 
