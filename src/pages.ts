@@ -660,7 +660,11 @@ export const sectionPages: SectionPage[] = [
     heading: 'Every site',
     headingAccent: 'I have designed and built.',
     intro:
-      'Four live client sites on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
+      // These two counts are written out, so they go stale silently. They must
+      // match `projects` in content.ts: status 'client' and status 'concept'.
+      // pages.ts cannot import content.ts to derive them -- content.ts pulls in
+      // React icons, and scripts/build-pages.mjs imports this file from Node.
+      'Five live client sites on their own domains, and six concept redesigns I built to pitch businesses I wanted to work with. Hover a preview to scroll through the whole page, or open the case study behind it.',
   },
   {
     slug: 'how-it-works',
