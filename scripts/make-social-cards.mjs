@@ -13,6 +13,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import puppeteer from 'puppeteer-core'
+import { all, barLabel, pick } from './social-projects.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
@@ -33,17 +34,6 @@ const C = {
   accentSoft: '#8DB5FF',
 }
 
-const posts = [
-  { slug: 'karam-motors', title: 'Karam Motors', category: 'Car dealership · Fourways', domain: 'karammotors.co.za', image: 'karam-motors.webp', client: true },
-  { slug: 'bokkoms', title: 'Bokkoms', category: 'Self-catering guesthouse · Paternoster', domain: 'stayatbokkomsinpaternoster.com', image: 'bokkoms.webp', client: true },
-  { slug: 'liftr-co', title: 'LIFTR Co', category: 'Crane hire · Nationwide', domain: 'liftrco.co.za', image: 'liftr.webp', client: true },
-  { slug: 'flexi-tours', title: 'Flexi Tours', category: 'Tour operator · Cape Town', domain: 'flexi-tours.co.za', image: 'flexitours.webp', client: true },
-  { slug: 'flexi-travel-safari', title: 'Flexi Travel & Safari', category: 'Safari & travel · Spain and South Africa', domain: 'flexitravelandsafari.com', image: 'flexi-travel-safari.webp', client: true },
-  { slug: 'drip-dry-plumbing', title: 'Drip Dry Plumbing', category: 'Plumbing · Roodepoort', domain: 'concept design', image: 'dripdry-plumbing.webp', client: false },
-  { slug: 'sure-penzance-travel', title: 'Sure Penzance Travel', category: 'Travel agency · Alberton', domain: 'concept design', image: 'sure-travel.webp', client: false },
-  { slug: 'flexi-hire', title: 'Flexi Hire', category: 'Event hire · Centurion', domain: 'concept design', image: 'flexihire.webp', client: false },
-  { slug: 'jpm-plumbing', title: 'JPM Plumbing & Electrical', category: 'Plumbing & electrical · Johannesburg', domain: 'concept design', image: 'jpm-plumbing.webp', client: false },
-]
 
 const logo = `<svg width="46" height="46" viewBox="6.2 6 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M18.6 20.2 22.4 24.6" stroke="${C.accentBright}" stroke-width="3" stroke-linecap="round"/>
@@ -125,7 +115,7 @@ function html(post, dataUri) {
     <div class="frame">
       <div class="bar">
         <span class="dot"></span><span class="dot"></span><span class="dot"></span>
-        <span class="url">${post.domain}</span>
+        <span class="url">${barLabel(post)}</span>
       </div>
       <img class="shot" src="${dataUri}" alt="">
     </div>
@@ -142,6 +132,8 @@ function html(post, dataUri) {
 </body></html>`
 }
 
+const posts = pick(all, process.argv[2])
+
 const browser = await puppeteer.launch({ executablePath: CHROME, headless: 'new', args: ['--no-sandbox'] })
 const page = await browser.newPage()
 await page.setViewport({ width: SIZE, height: SIZE, deviceScaleFactor: 1 })
@@ -151,7 +143,7 @@ await mkdir(outDir, { recursive: true })
 
 for (const post of posts) {
   // file:// URLs do not load inside setContent, so the screenshot goes in as data.
-  const buf = await readFile(path.join(root, 'public/work', post.image))
+  const buf = await readFile(path.join(root, post.image))
   const dataUri = `data:image/webp;base64,${buf.toString('base64')}`
 
   // networkidle0 hangs here: the Google Fonts connection never goes quiet.

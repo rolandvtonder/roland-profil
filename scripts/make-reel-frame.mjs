@@ -15,6 +15,7 @@ import { readFile, writeFile, mkdir } from 'node:fs/promises'
 import { fileURLToPath } from 'node:url'
 import path from 'node:path'
 import puppeteer from 'puppeteer-core'
+import { all, barLabel, pick as pickFrom } from './social-projects.mjs'
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..')
 const CHROME = 'C:/Program Files/Google/Chrome/Application/chrome.exe'
@@ -46,13 +47,7 @@ const C = {
   accentSoft: '#8DB5FF',
 }
 
-export const reels = [
-  { slug: 'karam-motors', title: 'Karam Motors', category: 'Car dealership · Fourways', domain: 'karammotors.co.za', image: 'karam-motors.webp', client: true },
-  { slug: 'bokkoms', title: 'Bokkoms', category: 'Self-catering · Paternoster', domain: 'stayatbokkomsinpaternoster.com', image: 'bokkoms.webp', client: true },
-  { slug: 'liftr-co', title: 'LIFTR Co', category: 'Crane hire · Nationwide', domain: 'liftrco.co.za', image: 'liftr.webp', client: true },
-  { slug: 'flexi-tours', title: 'Flexi Tours', category: 'Tour operator · Cape Town', domain: 'flexi-tours.co.za', image: 'flexitours.webp', client: true },
-  { slug: 'flexi-travel-safari', title: 'Flexi Travel & Safari', category: 'Safari & travel · Spain and SA', domain: 'flexitravelandsafari.com', image: 'flexi-travel-safari.webp', client: true },
-]
+export const reels = all
 
 const logo = `<svg width="44" height="44" viewBox="6.2 6 21 21" fill="none" xmlns="http://www.w3.org/2000/svg">
   <path d="M18.6 20.2 22.4 24.6" stroke="${C.accentBright}" stroke-width="3" stroke-linecap="round"/>
@@ -119,7 +114,7 @@ function html(reel, { hole, shotUri }) {
 <body>
   <div class="bg"></div><div class="glow"></div><div class="glow-2"></div>
   <div class="brand">${logo}<span class="name">Roland Web Design</span></div>
-  <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">${reel.domain}</span></div>
+  <div class="bar"><span class="dot"></span><span class="dot"></span><span class="dot"></span><span class="url">${barLabel(reel)}</span></div>
   <div class="win">${hole ? '' : `<img src="${shotUri}" alt="">`}</div>
   <div class="foot">
     <div class="title">${reel.title}</div>
@@ -139,7 +134,7 @@ export async function renderFrames(list) {
   await mkdir(outDir, { recursive: true })
 
   for (const reel of list) {
-    const buf = await readFile(path.join(root, 'public/work', reel.image))
+    const buf = await readFile(path.join(root, reel.image))
     const shotUri = `data:image/webp;base64,${buf.toString('base64')}`
 
     for (const hole of [true, false]) {
@@ -159,11 +154,7 @@ export async function renderFrames(list) {
   await browser.close()
 }
 
-export function pick(slug) {
-  const list = slug ? reels.filter((r) => r.slug === slug) : reels
-  if (!list.length) throw new Error(`no reel called "${slug}". Try: ${reels.map((r) => r.slug).join(', ')}`)
-  return list
-}
+export const pick = (slug) => pickFrom(reels, slug)
 
 // Only run when invoked directly, so make-reels.mjs can import the geometry.
 if (process.argv[1] && path.resolve(process.argv[1]) === fileURLToPath(import.meta.url)) {

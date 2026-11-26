@@ -38,7 +38,8 @@ await renderFrames(list)
 
 console.log('\nencoding...')
 for (const reel of list) {
-  const shot = path.join(root, 'public/work', reel.image)
+  // `image` is already repo-relative; social-projects.mjs owns where it lives.
+  const shot = path.join(root, reel.image)
   const surround = path.join(outDir, `${reel.slug}-surround.png`)
   const out = path.join(outDir, `${reel.slug}.mp4`)
 
