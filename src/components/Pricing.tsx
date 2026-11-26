@@ -1,8 +1,8 @@
 import { motion } from 'framer-motion'
-import { ArrowRightIcon, CheckIcon, ShieldCheckIcon } from '@phosphor-icons/react'
+import { ArrowRightIcon, CheckIcon, MegaphoneIcon, ShieldCheckIcon } from '@phosphor-icons/react'
 import Reveal from './Reveal'
 import SectionHeading from './SectionHeading'
-import { carePlans, packages, pricingNote } from '../content'
+import { adsConditions, adsPlans, adsSetup, carePlans, packages, pricingNote } from '../content'
 import { easeOutSoft, revealViewport } from '../lib/motion'
 
 /** R7 500 rather than R7,500 — the local convention. */
@@ -127,6 +127,59 @@ export default function Pricing({ heading = true }: { heading?: boolean } = {}) 
               </li>
             ))}
           </ul>
+        </Reveal>
+
+        {/* Meta ads: separate from the website packages, because it is a
+            monthly service and because the ad spend is the client's, not mine. */}
+        <Reveal delay={0.05} className="mt-10">
+          <div className="mb-6 flex flex-wrap items-baseline gap-3">
+            <MegaphoneIcon size={20} weight="light" aria-hidden="true" className="translate-y-0.5 text-accent-soft" />
+            <h3 className="font-display text-[1.4rem] text-ink" style={{ fontWeight: 600 }}>
+              Running your ads
+            </h3>
+            <span className="text-[14px] text-ink-subtle">{rand(adsSetup)} setup, then monthly</span>
+          </div>
+          <ul className="grid gap-6 sm:grid-cols-2">
+            {adsPlans.map((tier) => (
+              <li
+                key={tier.name}
+                className={`flex flex-col rounded-3xl border p-7 ${
+                  tier.recommended ? 'border-accent/45 bg-accent/[0.06]' : 'border-line bg-surface/50'
+                }`}
+              >
+                <div className="flex items-baseline justify-between gap-4">
+                  <h4 className="font-display text-[1.2rem] text-ink" style={{ fontWeight: 600 }}>
+                    {tier.name}
+                  </h4>
+                  <p className="flex items-baseline gap-1.5 whitespace-nowrap">
+                    <span className="font-display text-[1.7rem] leading-none tracking-[-0.02em] text-ink" style={{ fontWeight: 700 }}>
+                      {rand(tier.price)}
+                    </span>
+                    <span className="text-[13.5px] text-ink-subtle">/month</span>
+                  </p>
+                </div>
+                <p className="mt-2 text-[14.5px] text-ink-muted">{tier.tagline}</p>
+                <ul className="mt-6 space-y-3 border-t border-line pt-5">
+                  {tier.includes.map((item) => (
+                    <li key={item} className="flex items-start gap-2.5 text-[14.5px] leading-relaxed text-ink-muted">
+                      <CheckIcon size={15} weight="bold" aria-hidden="true" className="mt-1 shrink-0 text-accent-soft" />
+                      {item}
+                    </li>
+                  ))}
+                </ul>
+              </li>
+            ))}
+          </ul>
+          <div className="mt-6 rounded-3xl border border-line bg-surface/40 p-7">
+            <ul className="space-y-3">
+              {adsConditions.map((note) => (
+                <li key={note} className="flex items-start gap-3 text-[14.5px] leading-relaxed text-ink-muted">
+                  <span aria-hidden="true" className="mt-2 size-1.5 shrink-0 rounded-full bg-accent-soft" />
+                  {note}
+                </li>
+              ))}
+            </ul>
+          </div>
         </Reveal>
 
         <Reveal delay={0.1} className="mx-auto mt-10 max-w-[70ch] text-center text-[15px] leading-relaxed text-ink-muted">

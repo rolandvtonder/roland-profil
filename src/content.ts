@@ -458,6 +458,57 @@ export const carePlans: CareTier[] = [
   },
 ]
 
+export type AdsTier = {
+  name: string
+  /** Management only. The ad spend is the client's and goes straight to Meta. */
+  price: number
+  tagline: string
+  includes: string[]
+  recommended?: boolean
+}
+
+/** Charged once, in the first month. Setup is 3-4x the work of a normal month. */
+export const adsSetup = 3500
+
+// Flat retainers, not a percentage of spend: 15% of a R5 000 budget is R750,
+// which does not cover the work, and it would pay me to push bigger budgets.
+export const adsPlans: AdsTier[] = [
+  {
+    name: 'Core',
+    price: 3500,
+    tagline: 'One campaign, run properly.',
+    includes: [
+      'One campaign, one audience, one goal',
+      'Pixel and conversion tracking set up correctly',
+      'Budget and bids managed every week',
+      'New creative once a month',
+      'A monthly report in plain English',
+    ],
+  },
+  {
+    name: 'Growth',
+    price: 6000,
+    tagline: 'More campaigns, more creative, retargeting.',
+    recommended: true,
+    includes: [
+      'Everything in Core',
+      'Several campaigns and audiences',
+      'New creative every two weeks',
+      'Retargeting people who visited and did not enquire',
+      'Landing pages built and tested for the campaign',
+    ],
+  },
+]
+
+// Stated up front because all three protect the client as much as me: too
+// little spend gives Meta no data to optimise on, and a one-month trial judges
+// a campaign while it is still learning.
+export const adsConditions = [
+  'Your ad spend is separate and paid straight to Meta, not to me.',
+  'Minimum R4 000 a month in ad spend \u2014 below that Meta has too little data to optimise, and the results are not worth either of our time.',
+  'Three months minimum, because campaigns need four to eight weeks before the numbers mean anything.',
+]
+
 // Shown under the packages, because it applies to all of them.
 export const pricingNote =
   'Every package starts with a free homepage design, so you see your new site before you pay anything. Prices are a starting point: you get a fixed quote upfront once I know what you need, and there are no surprises after that.'

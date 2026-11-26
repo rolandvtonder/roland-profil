@@ -90,7 +90,9 @@ export const servicePages: ServicePage[] = [
       'Anyone who has been boosting posts and seeing nothing for it',
     ],
     faqs: [
-      { question: 'How much should I spend on Facebook ads?', answer: 'Two separate numbers: the ad budget, which goes to Meta, and the management fee, which comes to me. For a small local business a meaningful test budget usually starts around R3 000 to R5 000 a month. Below that there is not enough data to learn from, and you end up paying to guess.' },
+      // Keep the ad-spend floor here in step with adsConditions in content.ts,
+      // or the page contradicts the terms it is quoting.
+      { question: 'How much does this cost?', answer: 'Two separate numbers. The ad budget goes straight to Meta, not to me, and starts at R4 000 a month — below that Meta has too little data to optimise on and you end up paying to guess. The management fee is mine: R3 500 once to set everything up properly in the first month, then R3 500 a month to run a single campaign, or R6 000 for several with retargeting and fresh creative every fortnight. Three months minimum, because a campaign is still learning before then. It is all on the pricing page.' },
       { question: 'Why not just boost posts myself?', answer: 'You can, and for building a following it is fine. But boosting gives you almost no control over targeting, no proper conversion tracking and no way to test versions against each other. If the goal is enquiries rather than likes, it is the wrong tool.' },
       { question: 'Do I need a website before running ads?', answer: 'For anything beyond brand awareness, yes. Sending paid traffic to a Facebook page or a weak page is how advertising budgets disappear. If you do not have a site yet, that comes first, and I build those too.' },
       { question: 'How soon will I see results?', answer: 'The first two to four weeks are mostly learning, which feels slow and is not wasted. Meta needs conversion data before it can find more of the right people. Anyone promising returns in week one is guessing.' },
